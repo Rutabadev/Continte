@@ -1,0 +1,10 @@
+h1 {
+    padding-top: 1em;
+}
+
+.icon {
+    position: relative;
+    /* Adjust these values accordingly */
+    top: 4px;
+    left: -2px;
+}
