@@ -8,6 +8,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  checked: boolean;
   overlayContainer: OverlayContainer;
   eventCalls: any;
 
@@ -16,17 +17,31 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('darkTheme') == 'true') {
+      this.setDarkTheme();
+      this.checked = true;
+    }
   }
 
   darkTheme(event) {
     console.log('darkTheme : ' + event.checked.toString());
     if (event.checked) {
-      this.overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
-      this.renderer.addClass(document.body, 'unicorn-dark-theme');
+      this.setDarkTheme();
+      localStorage.setItem('darkTheme', 'true');
     } else {
-      this.overlayContainer.getContainerElement().classList.remove('unicorn-dark-theme');
-      this.renderer.removeClass(document.body, 'unicorn-dark-theme');
+      this.setLightTheme();
+      localStorage.setItem('darkTheme', 'false');
     }
   }
+
+  private setDarkTheme() {
+    this.overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
+    this.renderer.addClass(document.body, 'unicorn-dark-theme');
+  }
+  private setLightTheme() {
+    this.overlayContainer.getContainerElement().classList.remove('unicorn-dark-theme');
+    this.renderer.removeClass(document.body, 'unicorn-dark-theme');
+  }
+
 
 }
