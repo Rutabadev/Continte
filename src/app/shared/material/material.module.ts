@@ -8,7 +8,9 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatNativeDateModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatSlideToggleModule,
+  MatSidenavModule
 } from '@angular/material';
 
 @NgModule({
@@ -23,7 +25,9 @@ import {
     MatInputModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSlideToggleModule,
+    MatSidenavModule
   ],
   declarations: []
 })
