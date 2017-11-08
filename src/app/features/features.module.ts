@@ -3,6 +3,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CalendarComponent } from './integration/calendar/calendar.component';
 
 
 @NgModule({
@@ -14,6 +15,6 @@ import { CommonModule } from '@angular/common';
     WelcomeComponent,
     IntegrationComponent
   ],
-  declarations: [ WelcomeComponent, IntegrationComponent]
+  declarations: [ WelcomeComponent, IntegrationComponent, CalendarComponent]
 })
 export class FeaturesModule { }
