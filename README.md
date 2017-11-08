@@ -1,6 +1,8 @@
-# Continte
+# Contintegration
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+
+It's a web app that will be replacing Excel sheets to manage integration by Software Architect and Developers at Continental.
 
 ## Development server
 
