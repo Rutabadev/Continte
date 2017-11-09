@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (localStorage.getItem('darkTheme') == 'true') {
+    if (localStorage.getItem('darkTheme') === 'true') {
       this.setDarkTheme();
       this.checked = true;
     }
