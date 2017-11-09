@@ -1,11 +1,17 @@
 h1 {
-    padding-top: 1em;
-    padding-bottom: 2em;
+   padding-top: 1em;
+   padding-bottom: 2em;
 }
 
 .icon {
-    position: relative;
-    /* Adjust these values accordingly */
-    top: 4px;
-    left: -2px;
+   position: relative;
+   /* Adjust these values accordingly */
+   top: 4px;
+   left: -2px;
+   animation: trash-spin infinite 3s linear;
 }
+
+@keyframes trash-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
