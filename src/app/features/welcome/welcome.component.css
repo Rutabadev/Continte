@@ -8,7 +8,7 @@ h1 {
    /* Adjust these values accordingly */
    top: 4px;
    left: -2px;
-   animation: trash-spin infinite 3s linear;
+   animation: trash-spin infinite 2.7s linear;
 }
 
 @keyframes trash-spin {
