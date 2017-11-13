@@ -1,0 +1,19 @@
+mat-icon {
+    font-size: 10em;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: spin infinite 3s linear, offsets infinite 3s ease-out;
+    line-height: 200%;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

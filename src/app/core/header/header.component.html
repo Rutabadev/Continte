@@ -1,10 +1,20 @@
 <nav class="navbar">
 
-   <mat-toolbar class="mat-elevation-z8" color="primary">
+    <mat-toolbar class="mat-elevation-z8" color="primary">
 
-      <span>Contintegration</span>
-      <span class="spacer"></span>
-      <mat-slide-toggle aria-label="change theme" [checked]="checked" (change)="darkTheme($event)">Dark Theme</mat-slide-toggle>
+        <a routerLink="/home">
+            <button mat-button class="main">Contintegration</button>
+        </a>
+        <a routerLink="/welcome">
+            <button mat-button class="secondary">Welcome</button>
+        </a>
+        <a routerLink="/calendar">
+            <button mat-button class="secondary">Calendar</button>
+        </a>
 
-   </mat-toolbar>
+        <span class="spacer"></span>
+
+        <mat-slide-toggle aria-label="change theme" [checked]="checked" (change)="darkTheme($event)">Dark Theme</mat-slide-toggle>
+
+    </mat-toolbar>
 </nav>

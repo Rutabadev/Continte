@@ -9,6 +9,7 @@ import { NgbDatepickerModule, NgbTimepickerModule} from '@ng-bootstrap/ng-bootst
 import { CalendarModule } from 'angular-calendar';
 import { CalendarHeaderComponent } from './integration/calendar/calendar-header/calendar-header.component';
 import { DateTimePickerComponent } from './integration/calendar/date-time-picker/date-time-picker.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -28,6 +29,6 @@ import { DateTimePickerComponent } from './integration/calendar/date-time-picker
     CalendarHeaderComponent,
     DateTimePickerComponent
   ],
-  declarations: [ WelcomeComponent, IntegrationComponent, CalendarComponent, CalendarHeaderComponent, DateTimePickerComponent]
+  declarations: [ WelcomeComponent, IntegrationComponent, CalendarComponent, CalendarHeaderComponent, DateTimePickerComponent, HomeComponent]
 })
 export class FeaturesModule { }
