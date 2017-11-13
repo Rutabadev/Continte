@@ -1,5 +1,5 @@
 import { FeaturesModule } from './features/features.module';
-import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     BrowserAnimationsModule,
-    SharedModule,
+    CoreModule,
     FeaturesModule,
     NgbModule.forRoot(),
     CalendarModule.forRoot()
