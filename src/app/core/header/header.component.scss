@@ -10,6 +10,15 @@
   font-size: .9em;
 }
 
+.make-it-slow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Transition to a bigger shadow on hover */
+.make-it-slow:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 a {
   color:inherit;
   text-decoration: none;

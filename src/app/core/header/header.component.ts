@@ -1,18 +1,18 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, Renderer } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   checked: boolean;
   overlayContainer: OverlayContainer;
   eventCalls: any;
 
-  constructor(overlayContainer: OverlayContainer, private renderer: Renderer2) {
+  constructor(overlayContainer: OverlayContainer, private renderer: Renderer, private renderer2: Renderer2) {
     this.overlayContainer = overlayContainer;
   }
 
@@ -35,12 +35,11 @@ export class HeaderComponent implements OnInit {
 
   private setDarkTheme() {
     this.overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
-    this.renderer.addClass(document.body, 'unicorn-dark-theme');
+    this.renderer2.addClass(document.body, 'unicorn-dark-theme');
   }
   private setLightTheme() {
     this.overlayContainer.getContainerElement().classList.remove('unicorn-dark-theme');
-    this.renderer.removeClass(document.body, 'unicorn-dark-theme');
+    this.renderer2.removeClass(document.body, 'unicorn-dark-theme');
   }
-
 
 }
