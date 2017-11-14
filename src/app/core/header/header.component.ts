@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
   }
 
   darkTheme(event) {
-    console.log('darkTheme : ' + event.checked.toString());
     if (event.checked) {
       this.setDarkTheme();
       localStorage.setItem('darkTheme', 'true');
