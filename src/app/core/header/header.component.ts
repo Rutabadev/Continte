@@ -3,43 +3,43 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+   selector: 'app-header',
+   templateUrl: './header.component.html',
+   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  checked: boolean;
-  overlayContainer: OverlayContainer;
-  eventCalls: any;
+   checked: boolean;
+   overlayContainer: OverlayContainer;
+   eventCalls: any;
 
-  constructor(overlayContainer: OverlayContainer, private renderer: Renderer, private renderer2: Renderer2) {
-    this.overlayContainer = overlayContainer;
-  }
+   constructor(overlayContainer: OverlayContainer, private renderer: Renderer, private renderer2: Renderer2) {
+      this.overlayContainer = overlayContainer;
+   }
 
-  ngOnInit() {
-    if (localStorage.getItem('darkTheme') === 'true') {
-      this.setDarkTheme();
-      this.checked = true;
-    }
-  }
+   ngOnInit() {
+      if (localStorage.getItem('darkTheme') === 'true') {
+         this.setDarkTheme();
+         this.checked = true;
+      }
+   }
 
-  darkTheme(event) {
-    if (event.checked) {
-      this.setDarkTheme();
-      localStorage.setItem('darkTheme', 'true');
-    } else {
-      this.setLightTheme();
-      localStorage.setItem('darkTheme', 'false');
-    }
-  }
+   darkTheme(event) {
+      if (event.checked) {
+         this.setDarkTheme();
+         localStorage.setItem('darkTheme', 'true');
+      } else {
+         this.setLightTheme();
+         localStorage.setItem('darkTheme', 'false');
+      }
+   }
 
-  private setDarkTheme() {
-    this.overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
-    this.renderer2.addClass(document.body, 'unicorn-dark-theme');
-  }
-  private setLightTheme() {
-    this.overlayContainer.getContainerElement().classList.remove('unicorn-dark-theme');
-    this.renderer2.removeClass(document.body, 'unicorn-dark-theme');
-  }
+   private setDarkTheme() {
+      this.overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
+      this.renderer2.addClass(document.body, 'unicorn-dark-theme');
+   }
+   private setLightTheme() {
+      this.overlayContainer.getContainerElement().classList.remove('unicorn-dark-theme');
+      this.renderer2.removeClass(document.body, 'unicorn-dark-theme');
+   }
 
 }
