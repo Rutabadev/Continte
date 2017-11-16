@@ -10,16 +10,16 @@
   font-size: .9em;
 }
 
-.make-it-slow {
-  transition: box-shadow 0.3s ease-in-out;
+.button-bump {
+  transition: box-shadow 0.2s ease-in-out;
 }
 
 /* Transition to a bigger shadow on hover */
-.make-it-slow:hover {
+.button-bump:hover {
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-.make-it-slow:active {
+.button-bump:active {
    box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
  }
 
