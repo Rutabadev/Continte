@@ -2,15 +2,11 @@
 
     <mat-toolbar class="mat-elevation-z8" color="primary">
 
-        <a routerLink="/home">
-            <button mat-button class="main button-bump">Contintegration</button>
-        </a>
-        <a routerLink="/welcome">
-            <button mat-button class="secondary button-bump">Welcome</button>
-        </a>
-        <a routerLink="/calendar">
-            <button mat-button class="secondary button-bump">Calendar</button>
-        </a>
+        <div *ngFor='let element of elements'>
+            <a [routerLink]="element.routerLink">
+                <button mat-button class="button-bump" [class.main]="element.main" [class.secondary]="!element.main">{{element.name}}</button>
+            </a>
+        </div>
 
         <span class="spacer"></span>
 
