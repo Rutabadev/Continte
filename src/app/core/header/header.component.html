@@ -4,7 +4,7 @@
 
         <div *ngFor='let element of elements'>
             <a [routerLink]="element.routerLink">
-                <button mat-button class="button-bump" [class.main]="element.main" [class.secondary]="!element.main">{{element.name}}</button>
+                <button mat-button class="button-bump" [class.main]="element.main" [class.secondary]="!element.main" (click)="activate(element)" [class.active]="element.isActive">{{element.name}}</button>
             </a>
         </div>
 
