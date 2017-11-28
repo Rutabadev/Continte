@@ -4,7 +4,16 @@
 
         <div *ngFor='let element of elements'>
             <a [routerLink]="element.routerLink">
-                <button mat-button class="button-bump" [class.main]="element.main" [class.secondary]="!element.main" (click)="activate(element)" [class.active]="element.isActive">{{element.name}}</button>
+                <button mat-button class="button-bump"
+                        [class.main]="element.main"
+                        [class.secondary]="!element.main"
+                        [ngClass]="element.height"
+                        (mouseover)="element.height='mat-elevation-z8'"
+                        (mouseleave)="element.height='flat'" 
+                        (click)="activate(element)"
+                        [class.mat-elevation-z6]="element.isActive">
+                    {{element.name}}
+                </button>
             </a>
         </div>
 

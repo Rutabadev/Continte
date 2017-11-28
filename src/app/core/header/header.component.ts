@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer2, Renderer } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Element } from './element'
-import { ELEMENTS } from './mocks'
+import { Element } from './element';
+import { ELEMENTS } from './mocks';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
     checked: boolean;
     overlayContainer: OverlayContainer;
     eventCalls: any;
-    elements: Element[]
+    elements: Element[];
 
     constructor(overlayContainer: OverlayContainer, private renderer: Renderer, private renderer2: Renderer2) {
         this.overlayContainer = overlayContainer;
