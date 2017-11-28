@@ -22,4 +22,4 @@ export const ELEMENTS: Element[] = [
         isActive: false,
         height: 'flat'
     }
-]
+];
