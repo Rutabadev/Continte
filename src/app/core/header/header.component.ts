@@ -27,8 +27,9 @@ export class HeaderComponent implements OnInit {
         this.elements = ELEMENTS;
     }
 
-    darkTheme(event) {
-        if (event.checked) {
+    darkTheme() {
+        // Also check if the value is null in case of first time seiing
+        if (localStorage.getItem('darkTheme') === 'false' || localStorage.getItem('darkTheme') === null) {
             this.setDarkTheme();
             localStorage.setItem('darkTheme', 'true');
         } else {

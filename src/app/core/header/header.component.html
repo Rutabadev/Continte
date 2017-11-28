@@ -18,8 +18,8 @@
         </div>
 
         <span class="spacer"></span>
-
-        <mat-slide-toggle aria-label="change theme" [checked]="checked" (change)="darkTheme($event)">Dark Theme</mat-slide-toggle>
-
+        <button mat-icon-button color="accent" matTooltip="invert color" [matTooltipPosition]="'before'">
+            <mat-icon (click)="darkTheme()">invert_colors</mat-icon>
+        </button>
     </mat-toolbar>
 </nav>
