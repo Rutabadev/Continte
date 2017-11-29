@@ -2,21 +2,28 @@ import { Component, OnInit, Renderer2, Renderer } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Element } from './element';
 import { ELEMENTS } from './mocks';
+import { SharingService } from '../../sharing.service';
 
 
 @Component({
     selector: 'app-header',
+    providers : [SharingService],
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    sharingService: SharingService;
     checked: boolean;
     overlayContainer: OverlayContainer;
     eventCalls: any;
     elements: Element[];
 
-    constructor(overlayContainer: OverlayContainer, private renderer: Renderer, private renderer2: Renderer2) {
+    constructor(overlayContainer: OverlayContainer,
+                private renderer: Renderer,
+                private renderer2: Renderer2,
+                sharingService: SharingService) {
         this.overlayContainer = overlayContainer;
+        this.sharingService = sharingService;
     }
 
     ngOnInit() {
@@ -32,9 +39,11 @@ export class HeaderComponent implements OnInit {
         if (localStorage.getItem('darkTheme') === 'false' || localStorage.getItem('darkTheme') === null) {
             this.setDarkTheme();
             localStorage.setItem('darkTheme', 'true');
+            this.sharingService.setDark(true);
         } else {
             this.setLightTheme();
             localStorage.setItem('darkTheme', 'false');
+            this.sharingService.setDark(false);
         }
     }
 

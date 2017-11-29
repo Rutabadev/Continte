@@ -10,7 +10,7 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './features/welcome/welcome.component';
 import { IntegrationComponent } from './features/integration/integration.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './/app.routing';
 
 @NgModule({
   declarations: [
