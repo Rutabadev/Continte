@@ -7,10 +7,14 @@ h1 {
    /* Adjust these values accordingly */
    top: 4px;
    left: -2px;
-   animation: trash-spin infinite 3s linear;
+   animation: spin infinite 3s linear;
 }
 
-@keyframes trash-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+@keyframes spin {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
