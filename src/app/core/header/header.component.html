@@ -5,8 +5,8 @@
         <div *ngFor='let element of elements'>
             <a [routerLink]="element.routerLink">
                 <button mat-button class="button-bump"
-                        [class.main]="element.main"
-                        [class.secondary]="!element.main"
+                        [class.main]="element.isMain"
+                        [class.secondary]="!element.isMain"
                         [ngClass]="element.height"
                         (mouseover)="element.height='mat-elevation-z8'"
                         (mouseleave)="element.height='flat'" 

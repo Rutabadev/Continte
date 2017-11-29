@@ -1,7 +1,7 @@
 export class Element {
     name: string;
     routerLink: string;
-    main: boolean;
+    isMain: boolean;
     isActive: boolean;
     height: string;
 }
