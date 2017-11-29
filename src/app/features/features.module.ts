@@ -10,6 +10,7 @@ import { CalendarModule } from 'angular-calendar';
 import { CalendarHeaderComponent } from './integration/calendar/calendar-header/calendar-header.component';
 import { DateTimePickerComponent } from './integration/calendar/date-time-picker/date-time-picker.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -29,6 +30,12 @@ import { HomeComponent } from './home/home.component';
     CalendarHeaderComponent,
     DateTimePickerComponent
   ],
-  declarations: [ WelcomeComponent, IntegrationComponent, CalendarComponent, CalendarHeaderComponent, DateTimePickerComponent, HomeComponent]
+  declarations: [ WelcomeComponent,
+                  IntegrationComponent,
+                  CalendarComponent,
+                  CalendarHeaderComponent,
+                  DateTimePickerComponent,
+                  HomeComponent,
+                  NotFoundComponent]
 })
 export class FeaturesModule { }
