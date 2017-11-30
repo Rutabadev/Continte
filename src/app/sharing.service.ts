@@ -12,11 +12,5 @@ export class SharingService {
   }
   dark: boolean;
 
-  getDark() {
-    return this.dark;
-  }
 
-  setDark(value) {
-    this.dark = value;
-  }
 }

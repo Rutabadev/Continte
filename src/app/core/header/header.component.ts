@@ -39,11 +39,11 @@ export class HeaderComponent implements OnInit {
         if (localStorage.getItem('darkTheme') === 'false' || localStorage.getItem('darkTheme') === null) {
             this.setDarkTheme();
             localStorage.setItem('darkTheme', 'true');
-            this.sharingService.setDark(true);
+            this.sharingService.dark = true;
         } else {
             this.setLightTheme();
             localStorage.setItem('darkTheme', 'false');
-            this.sharingService.setDark(false);
+            this.sharingService.dark = false;
         }
     }
 
