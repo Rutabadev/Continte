@@ -7,6 +7,7 @@
   $background: map-get($theme, background);
 
   // Use mat-color to extract individual colors from a palette as necessary.
+  /* important: opaque background masks the original */
   .glitch::before,
   .glitch::after,
   .glitch2::before,
