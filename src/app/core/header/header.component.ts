@@ -2,17 +2,15 @@ import { Component, OnInit, Renderer2, Renderer } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Element } from './element';
 import { ELEMENTS } from './mocks';
-import { SharingService } from '../../sharing.service';
 
 
 @Component({
     selector: 'app-header',
-    providers : [SharingService],
+    providers : [],
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    sharingService: SharingService;
     checked: boolean;
     overlayContainer: OverlayContainer;
     eventCalls: any;
@@ -20,16 +18,16 @@ export class HeaderComponent implements OnInit {
 
     constructor(overlayContainer: OverlayContainer,
                 private renderer: Renderer,
-                private renderer2: Renderer2,
-                sharingService: SharingService) {
+                private renderer2: Renderer2) {
         this.overlayContainer = overlayContainer;
-        this.sharingService = sharingService;
     }
 
     ngOnInit() {
         if (localStorage.getItem('darkTheme') === 'true') {
             this.setDarkTheme();
             this.checked = true;
+        } else {
+            this.setLightTheme();
         }
         this.elements = ELEMENTS;
     }
@@ -39,21 +37,23 @@ export class HeaderComponent implements OnInit {
         if (localStorage.getItem('darkTheme') === 'false' || localStorage.getItem('darkTheme') === null) {
             this.setDarkTheme();
             localStorage.setItem('darkTheme', 'true');
-            this.sharingService.dark = true;
         } else {
             this.setLightTheme();
             localStorage.setItem('darkTheme', 'false');
-            this.sharingService.dark = false;
         }
     }
 
     private setDarkTheme() {
         this.overlayContainer.getContainerElement().classList.add('unicorn-dark-theme');
+        this.overlayContainer.getContainerElement().classList.remove('axolotl-light-theme');
         this.renderer2.addClass(document.body, 'unicorn-dark-theme');
+        this.renderer2.removeClass(document.body, 'axolotl-light-theme');
     }
     private setLightTheme() {
+        this.overlayContainer.getContainerElement().classList.add('axolotl-light-theme');
         this.overlayContainer.getContainerElement().classList.remove('unicorn-dark-theme');
         this.renderer2.removeClass(document.body, 'unicorn-dark-theme');
+        this.renderer2.addClass(document.body, 'axolotl-light-theme');
     }
 
     activate(activatedElement) {

@@ -1,0 +1,18 @@
+// Import all the tools needed to customize the theme and extract parts of it
+@import '~@angular/material/theming';
+
+// Define a mixin that accepts a theme and outputs the color styles for the component.
+@mixin not-found-theme($theme) {
+  // Extract whichever individual palettes you need from the theme.
+  $background: map-get($theme, background);
+
+  // Use mat-color to extract individual colors from a palette as necessary.
+  .glitch::before,
+  .glitch::after,
+  .glitch2::before,
+  .glitch2::after,
+  .glitch3::before,
+  .glitch3::after {
+    background-color: mat-color($background, card);
+  }
+}

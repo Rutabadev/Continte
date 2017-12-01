@@ -6,6 +6,13 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+@import 'app/features/not-found/not-found.component.theme';
+
+@mixin custom-components-theme($theme) {
+	@include not-found-theme($theme);
+}
+
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
@@ -21,7 +28,10 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($candy-app-theme);
+.axolotl-light-theme {
+  @include angular-material-theme($candy-app-theme);
+  @include custom-components-theme($candy-app-theme);
+}
 
 // Define an alternate dark theme.
 $dark-primary: mat-palette($mat-orange);
@@ -34,4 +44,5 @@ $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 // `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
 .unicorn-dark-theme {
   @include angular-material-theme($dark-theme);  
+  @include custom-components-theme($dark-theme);
 }
