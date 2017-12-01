@@ -13,6 +13,6 @@
   .glitch2::after,
   .glitch3::before,
   .glitch3::after {
-    background-color: mat-color($background, card);
+    background: mat-color($background, background);
   }
 }

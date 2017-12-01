@@ -75,14 +75,6 @@
   animation: glitch-anim-6 2s infinite linear alternate-reverse;  
 }
 
-.dark > .glitch::before,
-.dark > .glitch::after,
-.dark > .glitch2::before,
-.dark > .glitch2::after,
-.dark > .glitch3::before,
-.dark > .glitch3::after {
-  background: #333;
-}
 
 $steps: 20;
 @keyframes glitch-anim-1 {
