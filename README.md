@@ -1,6 +1,8 @@
 # Contintegration
 
-An Angular web app that will be replacing Excel sheets to manage integration by Software Architect and Developers at Continental. Also a playground to mess with Angular 2 material and stuff.
+An Angular web app that will be replacing Excel sheets to manage integration by Software Architect and Developers at Continental.
+
+Also a playground to mess with Angular 2 material and stuff.
 
 ## Angular CLI
 
