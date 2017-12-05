@@ -17,6 +17,7 @@ import { AppRoutingModule } from './/app.routing';
     AppComponent
   ],
   imports: [
+    MaterializeModule,
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,

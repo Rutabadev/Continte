@@ -21,7 +21,8 @@
          "../node_modules/bootstrap/dist/css/bootstrap.min.css",
          "../node_modules/angular-calendar/dist/css/angular-calendar.css",
          "styles.scss",
-         "theme.scss"
+         "theme.scss",
+         "../node_modules/materialize-css/dist/css/materialize.css"
       ],
       "scripts": [
          "../node_modules/jquery/dist/jquery.js",
