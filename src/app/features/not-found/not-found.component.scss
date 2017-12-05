@@ -74,8 +74,6 @@
 
 
 $steps: 20;
-$steps1: 10;
-$steps2: 15;
 @keyframes glitch-anim-1 {
    @for $i from 0 through $steps {
       #{percentage($i*(1/$steps))} {
@@ -93,32 +91,32 @@ $steps2: 15;
 }
 
 @keyframes glitch-anim-3 {
-  @for $i from 0 through $steps1 {
-     #{percentage($i*(1/$steps1))} {
+  @for $i from 0 through $steps {
+     #{percentage($i*(1/$steps))} {
         clip: rect(random(100)+px, 9999px, random(100)+px, 0);
      }
   }
 }
 
 @keyframes glitch-anim-4 {
-  @for $i from 0 through $steps1 {
-     #{percentage($i*(1/$steps1))} {
+  @for $i from 0 through $steps {
+     #{percentage($i*(1/$steps))} {
         clip: rect(random(100)+px, 9999px, random(100)+px, 0);
      }
   }
 }
 
 @keyframes glitch-anim-5 {
-  @for $i from 0 through $steps2 {
-     #{percentage($i*(1/$steps2))} {
+  @for $i from 0 through $steps {
+     #{percentage($i*(1/$steps))} {
         clip: rect(random(100)+px, 9999px, random(100)+px, 0);
      }
   }
 }
 
 @keyframes glitch-anim-6 {
-  @for $i from 0 through $steps2 {
-     #{percentage($i*(1/$steps2))} {
+  @for $i from 0 through $steps {
+     #{percentage($i*(1/$steps))} {
         clip: rect(random(100)+px, 9999px, random(100)+px, 0);
      }
   }
