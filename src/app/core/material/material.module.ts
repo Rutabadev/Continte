@@ -11,7 +11,8 @@ import {
   MatDatepickerModule,
   MatSlideToggleModule,
   MatSidenavModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatCardModule
 } from '@angular/material';
 
 @NgModule({
@@ -29,7 +30,8 @@ import {
     MatDatepickerModule,
     MatSlideToggleModule,
     MatSidenavModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCardModule
   ],
   declarations: []
 })
