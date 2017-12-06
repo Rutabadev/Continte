@@ -11,6 +11,7 @@ import { CalendarHeaderComponent } from './integration/calendar/calendar-header/
 import { DateTimePickerComponent } from './integration/calendar/date-time-picker/date-time-picker.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PandaComponent } from './panda/panda.component';
 
 
 
@@ -36,6 +37,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
                   CalendarHeaderComponent,
                   DateTimePickerComponent,
                   HomeComponent,
-                  NotFoundComponent]
+                  NotFoundComponent,
+                  PandaComponent]
 })
 export class FeaturesModule { }

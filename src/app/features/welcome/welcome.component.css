@@ -20,18 +20,18 @@ h1 {
 }
 
 .title {
-   padding: 1em; 
+   padding: 1em;
 }
 
 @media(min-width: 992px) {
     mat-card {
-        min-height: 400px;
+        min-height: 410px;
     }
 }
 
 @media(max-width: 992px) {
     mat-card {
-        margin: 1em 0;        
+        margin: 1em 0;
     }
 }
 
