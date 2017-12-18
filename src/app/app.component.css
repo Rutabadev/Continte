@@ -1,3 +1,7 @@
+mat-sidenav {
+    min-width: 33%;
+}
+
 .side-btn {
     width: 100%;
     font-size: 1.4em;

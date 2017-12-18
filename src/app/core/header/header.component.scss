@@ -47,3 +47,9 @@ a {
       display: none;
    }
 }
+
+@media(min-width: 700px) {
+    #burger-btn {
+       display: none;
+    }
+ }

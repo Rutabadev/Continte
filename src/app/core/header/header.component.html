@@ -12,17 +12,14 @@
          <i class="material-icons">menu</i>
       </a> -->
 
-         <div class="example-sidenav-content">
-            <button type="button" mat-button (click)="sharingService.opened = true">
-               <i class="material-icons">menu</i>
-            </button>
-         </div>
+      <button id="burger-btn" mat-icon-button (click)="sharingService.opened = true">
+         <mat-icon>menu</mat-icon>
+      </button>
 
       <!-- Navbar Buttons -->
       <a *ngFor='let element of elements' class="menu-element" [routerLink]="element.routerLink">
          <button mat-button class="button-bump" [class.main]="element.isMain" [class.secondary]="!element.isMain" [ngClass]="element.height"
-            (mouseover)="element.height='mat-elevation-z8'" (mouseleave)="element.height='flat'"
-            [class.mat-elevation-z6]="element.routerLink === this.router.url">
+            (mouseover)="element.height='mat-elevation-z8'" (mouseleave)="element.height='flat'" [class.mat-elevation-z6]="element.routerLink === this.router.url">
             {{element.name}}
          </button>
       </a>
