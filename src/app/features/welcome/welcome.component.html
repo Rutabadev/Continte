@@ -1,46 +1,64 @@
 <h1>Welcome to Contintengration, because Excel sheets are
-	<mat-icon class="icon" color="accent">delete_forever</mat-icon>
+   <mat-icon class="icon" color="accent">delete_forever</mat-icon>
 </h1>
 <div class="container">
-	<div class="row d-flex">
-		<div class="col l4 d-flex">
-			<mat-card>
-				<mat-card-content>
-					<a class="btn btn-floating btn-large pulse"><i class="material-icons">date_range</i></a>
-					<h2 class="title">
-						Calendars
-					</h2>
-					<h3>Access multiple integration calendars all in one place</h3>
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi eaque dicta adipisci, quae facere odit in illum id soluta!</p>
-				</mat-card-content>
-				<button class="footer-btn" mat-button>learn more</button>
-			</mat-card>
-		</div>
-		<div class="col l4 d-flex">
-			<mat-card>
-				<mat-card-content>
-					<a class="btn btn-floating btn-large pulse"><i class="material-icons">edit</i></a>
-					<h2 class="title">
-						Edit
-					</h2>
-					<h3>Edit your existing planifications</h3>
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi eaque dicta adipisci, quae facere odit in illum id soluta!</p>
-				</mat-card-content>
-				<button class="footer-btn" mat-button>learn more</button>
-			</mat-card>
-		</div>		
-		<div class="col l4 d-flex">
-			<mat-card>
-				<mat-card-content>
-					<a class="btn btn-floating btn-large pulse"><i class="material-icons">cloud</i></a>			
-					<h2 class="title">
-						Concurencial
-					</h2>
-					<h3>No more concurencial problems because it's a web app</h3>
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi eaque dicta adipisci, quae facere odit in illum id soluta!</p>
-				</mat-card-content>
-				<button class="footer-btn" mat-button>learn more</button>
-			</mat-card>
-		</div>
-	</div>
+   <div class="row d-flex">
+      <div class="col l4 d-flex">
+         <mat-card>
+            <mat-card-content>
+               <button mat-fab color="primary" class="pulse">
+                  <mat-icon>date_range</mat-icon>
+               </button>
+               <h2 class="title">
+                  Calendars
+               </h2>
+               <h3>Access multiple integration calendars all in one place</h3>
+               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem
+                  quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
+                  eaque dicta adipisci, quae facere odit in illum id soluta!</p>
+            </mat-card-content>
+            <a routerLink="./calendars-infos">
+               <button color="accent" class="footer-btn" mat-button>learn more</button>
+            </a>
+         </mat-card>
+      </div>
+      <div class="col l4 d-flex">
+         <mat-card>
+            <mat-card-content>
+               <button mat-fab color="primary" class="pulse">
+                  <mat-icon>edit</mat-icon>
+               </button>
+               <h2 class="title">
+                  Edit
+               </h2>
+               <h3>Edit your existing planifications</h3>
+               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem
+                  quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
+                  eaque dicta adipisci, quae facere odit in illum id soluta!</p>
+            </mat-card-content>
+            <a routerLink="./edit-infos">
+               <button color="accent" class="footer-btn" mat-button>learn more</button>
+            </a>
+         </mat-card>
+      </div>
+      <div class="col l4 d-flex">
+         <mat-card>
+            <mat-card-content>
+               <button mat-fab color="primary" class="pulse">
+                  <mat-icon>cloud</mat-icon>
+               </button>
+               <h2 class="title">
+                  Concurencial
+               </h2>
+               <h3>No more concurencial problems because it's a web app</h3>
+               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem
+                  quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
+                  eaque dicta adipisci, quae facere odit in illum id soluta!</p>
+            </mat-card-content>
+            <a routerLink="./concurencial-infos">
+               <button color="accent" class="footer-btn" mat-button>learn more</button>
+            </a>
+         </mat-card>
+      </div>
+   </div>
 </div>

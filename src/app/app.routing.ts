@@ -12,7 +12,13 @@ import { EditInfosComponent } from './features/welcome/edit-infos/edit-infos.com
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'welcome', component: WelcomeComponent, children: [
+  { path: 'welcome', children: [
+    {
+      path: '', component: WelcomeComponent
+    },
+    {
+      path: 'calendars-infos', component: CalendarsInfosComponent
+    },
     {
       path: 'calendars-infos', component: CalendarsInfosComponent
     },

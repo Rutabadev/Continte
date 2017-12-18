@@ -15,6 +15,7 @@ import { PandaComponent } from './panda/panda.component';
 import { CalendarsInfosComponent } from './welcome/calendars-infos/calendars-infos.component';
 import { EditInfosComponent } from './welcome/edit-infos/edit-infos.component';
 import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concurencial-infos.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -25,7 +26,8 @@ import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concure
     FormsModule,
     NgbDatepickerModule.forRoot(),
     NgbTimepickerModule.forRoot(),
-    CalendarModule
+    CalendarModule,
+    RouterModule
   ],
   exports: [
     WelcomeComponent,
