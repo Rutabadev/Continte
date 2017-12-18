@@ -2,6 +2,8 @@ import { Component, OnInit, Renderer2, Renderer } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Element } from './element';
 import { ELEMENTS } from './mocks';
+import { SharingService } from '../../sharing.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,6 +13,8 @@ import { ELEMENTS } from './mocks';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    router: Router;
+    sharingService: SharingService;
     checked: boolean;
     overlayContainer: OverlayContainer;
     eventCalls: any;
@@ -18,8 +22,12 @@ export class HeaderComponent implements OnInit {
 
     constructor(overlayContainer: OverlayContainer,
                 private renderer: Renderer,
-                private renderer2: Renderer2) {
+                private renderer2: Renderer2,
+                sharingService: SharingService,
+                private _router: Router) {
         this.overlayContainer = overlayContainer;
+        this.sharingService = sharingService;
+        this.router = _router;
     }
 
     ngOnInit() {
@@ -54,12 +62,5 @@ export class HeaderComponent implements OnInit {
         this.overlayContainer.getContainerElement().classList.remove('unicorn-dark-theme');
         this.renderer2.removeClass(document.body, 'unicorn-dark-theme');
         this.renderer2.addClass(document.body, 'axolotl-light-theme');
-    }
-
-    activate(activatedElement) {
-        this.elements.forEach(element => {
-            element.isActive = false;
-        });
-        activatedElement.isActive = true;
     }
 }

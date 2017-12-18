@@ -3,20 +3,26 @@
    <mat-toolbar class="mat-elevation-z8" color="primary">
 
       <!-- SideNav for mobile -->
-      <ul id="slide-out" class="side-nav">
+      <!-- <ul id="slide-out" class="side-nav">
          <li *ngFor="let element of elements" routerLinkActive="active">
             <a [routerLink]="[element.routerLink]">{{element.name}}</a>
          </li>
       </ul>
       <a materialize="sideNav" [materializeParams]="[{closeOnClick:true}]" href="#" data-activates="slide-out" class="button-collapse">
          <i class="material-icons">menu</i>
-      </a>
+      </a> -->
+
+         <div class="example-sidenav-content">
+            <button type="button" mat-button (click)="sharingService.opened = true">
+               <i class="material-icons">menu</i>
+            </button>
+         </div>
 
       <!-- Navbar Buttons -->
       <a *ngFor='let element of elements' class="menu-element" [routerLink]="element.routerLink">
          <button mat-button class="button-bump" [class.main]="element.isMain" [class.secondary]="!element.isMain" [ngClass]="element.height"
-            (mouseover)="element.height='mat-elevation-z8'" (mouseleave)="element.height='flat'" (click)="activate(element)"
-            [class.mat-elevation-z6]="element.isActive">
+            (mouseover)="element.height='mat-elevation-z8'" (mouseleave)="element.height='flat'"
+            [class.mat-elevation-z6]="element.routerLink === this.router.url">
             {{element.name}}
          </button>
       </a>

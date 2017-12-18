@@ -12,6 +12,9 @@ import { DateTimePickerComponent } from './integration/calendar/date-time-picker
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PandaComponent } from './panda/panda.component';
+import { CalendarsInfosComponent } from './welcome/calendars-infos/calendars-infos.component';
+import { EditInfosComponent } from './welcome/edit-infos/edit-infos.component';
+import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concurencial-infos.component';
 
 
 
@@ -38,6 +41,9 @@ import { PandaComponent } from './panda/panda.component';
                   DateTimePickerComponent,
                   HomeComponent,
                   NotFoundComponent,
-                  PandaComponent]
+                  PandaComponent,
+                  CalendarsInfosComponent,
+                  EditInfosComponent,
+                  ConcurencialInfosComponent]
 })
 export class FeaturesModule { }

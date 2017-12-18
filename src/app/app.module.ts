@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './features/welcome/welcome.component';
 import { IntegrationComponent } from './features/integration/integration.component';
 import { AppRoutingModule } from './app.routing';
+import { SharingService } from './sharing.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { AppRoutingModule } from './app.routing';
     CalendarModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

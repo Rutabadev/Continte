@@ -1,3 +1,5 @@
+import { ConcurencialInfosComponent } from './features/welcome/concurencial-infos/concurencial-infos.component';
+import { CalendarsInfosComponent } from './features/welcome/calendars-infos/calendars-infos.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,10 +8,21 @@ import { IntegrationComponent } from './features/integration/integration.compone
 import { HomeComponent } from './features/home/home.component';
 import { NotFoundComponent } from './features/not-found/not-found.component';
 import { PandaComponent } from './features/panda/panda.component';
+import { EditInfosComponent } from './features/welcome/edit-infos/edit-infos.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'welcome', component: WelcomeComponent },
+  { path: 'welcome', component: WelcomeComponent, children: [
+    {
+      path: 'calendars-infos', component: CalendarsInfosComponent
+    },
+    {
+      path: 'edit-infos', component: EditInfosComponent
+    },
+    {
+      path: 'concurencial-infos', component: ConcurencialInfosComponent
+    }
+  ]},
   { path: 'calendar', component: IntegrationComponent },
   { path: 'panda', component: PandaComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },

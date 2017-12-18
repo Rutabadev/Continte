@@ -1,33 +1,44 @@
 h1 {
-   padding-bottom: 2em;
+    padding-bottom: 2em;
 }
 
 .icon {
-   position: relative;
-   font-size: 1.7em;
-   width: 50px;
-   height: 45px;
-   /* Adjust these values accordingly */
-   top: 7px;
-   left: -5px;
-   animation: spin infinite 3s linear;
+    position: relative;
+    font-size: 1.7em;
+    width: 50px;
+    height: 45px;
+    /* Adjust these values accordingly */
+    top: 7px;
+    left: -5px;
+    animation: spin infinite 3s linear;
 }
 
 @keyframes spin {
-   from {
-      transform: rotate(0deg);
-   }
-   to {
-      transform: rotate(360deg);
-   }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .title {
-   padding: 1em;
+    padding: 1em;
 }
 
 .d-flex {
     display: flex;
+    position: relative;
+}
+
+.footer-btn {
+    position: absolute;
+    bottom: 24px;
+    left: 33%;
+}
+
+mat-card-content {
+    padding-bottom: 36px;
 }
 
 @media(min-width: 992px) {
@@ -40,9 +51,7 @@ h1 {
     mat-card {
         margin: 1em 0;
     }
-
     .d-flex {
         display: inherit;
     }
 }
-
