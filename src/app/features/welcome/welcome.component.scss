@@ -34,7 +34,16 @@ h1 {
 .footer-btn {
     position: absolute;
     bottom: 24px;
-    left: 33%;
+    left: 50%;
+}
+
+.footer-btn2 {
+    position: relative;
+    left: -50%;
+}
+
+@media(max-width: 992px) {
+    left: 50%;
 }
 
 mat-card-content {

@@ -6,9 +6,11 @@
       <div class="col l4 d-flex">
          <mat-card>
             <mat-card-content>
-               <button mat-fab color="primary" class="pulse rotate" (mouseenter)="date_range = 'add'" (mouseleave)="date_range = 'date_range'">
-                  <mat-icon>{{date_range}}</mat-icon>
-               </button>
+               <a routerLink="./calendars-infos">
+                     <button mat-fab color="primary" class="pulse rotate" (mouseenter)="date_range = 'add'" (mouseleave)="date_range = 'date_range'">
+                        <mat-icon>{{date_range}}</mat-icon>
+                     </button>
+               </a>
                <h2 class="title">
                   Calendars
                </h2>
@@ -17,9 +19,11 @@
                   quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
                   eaque dicta adipisci, quae facere odit in illum id soluta!</p>
             </mat-card-content>
-            <a routerLink="./calendars-infos">
-               <button color="accent" class="footer-btn" mat-button>learn more</button>
-            </a>
+            <div class="footer-btn">
+                  <a routerLink="./calendars-infos">
+                     <button color="accent" class="footer-btn2" mat-button>learn more</button>
+                  </a>
+            </div>
          </mat-card>
       </div>
       <div class="col l4 d-flex">
@@ -38,9 +42,11 @@
                   quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
                   eaque dicta adipisci, quae facere odit in illum id soluta!</p>
             </mat-card-content>
-            <a routerLink="./edit-infos">
-               <button color="accent" class="footer-btn" mat-button>learn more</button>
-            </a>
+            <div class="footer-btn">
+                  <a routerLink="./edit-infos">
+                     <button color="accent" class="footer-btn2" mat-button>learn more</button>
+                  </a>
+            </div>
          </mat-card>
       </div>
       <div class="col l4 d-flex">
@@ -59,9 +65,11 @@
                   quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
                   eaque dicta adipisci, quae facere odit in illum id soluta!</p>
             </mat-card-content>
-            <a routerLink="./concurencial-infos">
-               <button color="accent" class="footer-btn" mat-button>learn more</button>
-            </a>
+            <div class="footer-btn">
+                  <a routerLink="./concurencial-infos">
+                     <button color="accent" class="footer-btn2" mat-button>learn more</button>
+                  </a>
+            </div>
          </mat-card>
       </div>
    </div>

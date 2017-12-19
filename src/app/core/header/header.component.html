@@ -1,9 +1,7 @@
-<nav class="navbar">
+<mat-toolbar class="mat-elevation-z8" color="primary">
 
-   <mat-toolbar class="mat-elevation-z8" color="primary">
-
-      <!-- SideNav for mobile -->
-      <!-- <ul id="slide-out" class="side-nav">
+    <!-- SideNav for mobile -->
+    <!-- <ul id="slide-out" class="side-nav">
          <li *ngFor="let element of elements" routerLinkActive="active">
             <a [routerLink]="[element.routerLink]">{{element.name}}</a>
          </li>
@@ -12,25 +10,24 @@
          <i class="material-icons">menu</i>
       </a> -->
 
-      <button id="burger-btn" mat-icon-button (click)="sharingService.opened = !sharingService.opened">
-         <mat-icon>menu</mat-icon>
-      </button>
+    <button id="burger-btn" mat-icon-button (click)="sharingService.opened = !sharingService.opened">
+        <mat-icon>menu</mat-icon>
+    </button>
 
-      <!-- Navbar Buttons -->
-      <a *ngFor='let element of elements' class="menu-element" [routerLink]="element.routerLink">
-         <button mat-button class="button-bump" [class.main]="element.isMain" [class.secondary]="!element.isMain" [ngClass]="element.height"
-            (mouseover)="element.height='mat-elevation-z8'" (mouseleave)="element.height='flat'" [class.mat-elevation-z6]="element.routerLink === this.router.url">
+    <!-- Navbar Buttons -->
+    <a *ngFor='let element of elements' class="menu-element" [routerLink]="element.routerLink">
+        <button mat-button class="button-bump" [class.main]="element.isMain" [class.secondary]="!element.isMain" [ngClass]="element.height"
+            (mouseover)="element.height='mat-elevation-z8'" (mouseleave)="element.height='flat'" [class.mat-elevation-z6]="!this.router.url.indexOf(element.routerLink)">
             {{element.name}}
-         </button>
-      </a>
+        </button>
+    </a>
 
-      <!-- Push the content to the right of the navbar -->
-      <span class="spacer"></span>
+    <!-- Push the content to the right of the navbar -->
+    <span class="spacer"></span>
 
-      <!-- Invert Button -->
-      <button id="invert" mat-icon-button color="accent" matTooltip="invert color" [matTooltipPosition]="'before'">
-         <mat-icon (click)="darkTheme()">invert_colors</mat-icon>
-      </button>
+    <!-- Invert Button -->
+    <button id="invert" mat-icon-button color="accent" matTooltip="invert color" [matTooltipPosition]="'before'">
+        <mat-icon (click)="darkTheme()">invert_colors</mat-icon>
+    </button>
 
-   </mat-toolbar>
-</nav>
+</mat-toolbar>

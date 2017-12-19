@@ -1,18 +1,21 @@
 <app-header></app-header>
 
 <mat-sidenav-container>
-   <mat-sidenav [(opened)]="sharingService.opened" (close)="sharingService.opened = false" mode="over">
-      <ul>
-         <li *ngFor="let element of elements" [routerLink]="element.routerLink">
-            <button class="side-btn" (click)="sharingService.opened = false" mat-button>{{element.name}}</button>
-         </li>
-      </ul>
-   </mat-sidenav>
-   <!-- Applying the mat-typography class adds styles for native elements. -->
-   <section class="mat-typography">
-      <router-outlet></router-outlet>
-   </section>
 
-   <app-footer></app-footer>
+
+    <mat-sidenav class="mat-elevation-z8" [(opened)]="sharingService.opened" (close)="sharingService.opened = false">
+        <ul>
+            <li *ngFor="let element of elements" [routerLink]="element.routerLink">
+                <button class="side-btn" (click)="sharingService.opened = false" mat-button>{{element.name}}</button>
+            </li>
+        </ul>
+    </mat-sidenav>
+    <div class="spacer"></div>
+    <!-- Applying the mat-typography class adds styles for native elements. -->
+    <section class="mat-typography">
+        <router-outlet></router-outlet>
+    </section>
+
+    <app-footer></app-footer>
 
 </mat-sidenav-container>
