@@ -22,6 +22,12 @@ export const ELEMENTS: Element[] = [
    {
       name: 'Panda',
       routerLink: '/panda',
+      isMain: false,
+      height: 'flat'
+   },
+   {
+      name: 'Todos',
+      routerLink: '/todos',
       isMain: true,
       height: 'flat'
    }

@@ -16,6 +16,7 @@ import { CalendarsInfosComponent } from './welcome/calendars-infos/calendars-inf
 import { EditInfosComponent } from './welcome/edit-infos/edit-infos.component';
 import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concurencial-infos.component';
 import { RouterModule } from '@angular/router';
+import { TodosComponent } from './todos/todos.component';
 
 
 
@@ -29,13 +30,6 @@ import { RouterModule } from '@angular/router';
     CalendarModule,
     RouterModule
   ],
-  exports: [
-    WelcomeComponent,
-    IntegrationComponent,
-    CalendarComponent,
-    CalendarHeaderComponent,
-    DateTimePickerComponent
-  ],
   declarations: [ WelcomeComponent,
                   IntegrationComponent,
                   CalendarComponent,
@@ -46,6 +40,7 @@ import { RouterModule } from '@angular/router';
                   PandaComponent,
                   CalendarsInfosComponent,
                   EditInfosComponent,
-                  ConcurencialInfosComponent]
+                  ConcurencialInfosComponent,
+                  TodosComponent]
 })
 export class FeaturesModule { }
