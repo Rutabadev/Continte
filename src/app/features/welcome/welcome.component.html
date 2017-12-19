@@ -6,7 +6,7 @@
       <div class="col l4 d-flex">
          <mat-card>
             <mat-card-content>
-               <button mat-fab color="primary" class="pulse">
+               <button mat-fab color="primary" class="pulse rotate">
                   <mat-icon>date_range</mat-icon>
                </button>
                <h2 class="title">
@@ -25,9 +25,11 @@
       <div class="col l4 d-flex">
          <mat-card>
             <mat-card-content>
-               <button mat-fab color="primary" class="pulse">
-                  <mat-icon>edit</mat-icon>
-               </button>
+               <a routerLink="./edit-infos">
+                  <button mat-fab color="primary" class="pulse rotate">
+                     <mat-icon>edit</mat-icon>
+                  </button>
+               </a>
                <h2 class="title">
                   Edit
                </h2>
@@ -44,9 +46,11 @@
       <div class="col l4 d-flex">
          <mat-card>
             <mat-card-content>
-               <button mat-fab color="primary" class="pulse">
-                  <mat-icon>cloud</mat-icon>
-               </button>
+               <a routerLink="./concurencial-infos">
+                  <button mat-fab color="primary" class="pulse rotate">
+                     <mat-icon>cloud</mat-icon>
+                  </button>
+               </a>
                <h2 class="title">
                   Concurencial
                </h2>
