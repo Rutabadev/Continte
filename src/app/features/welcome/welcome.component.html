@@ -6,8 +6,8 @@
       <div class="col l4 d-flex">
          <mat-card>
             <mat-card-content>
-               <button mat-fab color="primary" class="pulse rotate">
-                  <mat-icon>date_range</mat-icon>
+               <button mat-fab color="primary" class="pulse rotate" (mouseenter)="date_range = 'add'" (mouseleave)="date_range = 'date_range'">
+                  <mat-icon>{{date_range}}</mat-icon>
                </button>
                <h2 class="title">
                   Calendars
@@ -26,8 +26,8 @@
          <mat-card>
             <mat-card-content>
                <a routerLink="./edit-infos">
-                  <button mat-fab color="primary" class="pulse rotate">
-                     <mat-icon>edit</mat-icon>
+                  <button mat-fab color="primary" class="pulse rotate" (mouseenter)="edit = 'add'" (mouseleave)="edit = 'edit'">
+                     <mat-icon>{{edit}}</mat-icon>
                   </button>
                </a>
                <h2 class="title">
@@ -47,8 +47,8 @@
          <mat-card>
             <mat-card-content>
                <a routerLink="./concurencial-infos">
-                  <button mat-fab color="primary" class="pulse rotate">
-                     <mat-icon>cloud</mat-icon>
+                  <button mat-fab color="primary" class="pulse rotate" (mouseenter)="cloud = 'add'" (mouseleave)="cloud = 'cloud'">
+                     <mat-icon>{{cloud}}</mat-icon>
                   </button>
                </a>
                <h2 class="title">

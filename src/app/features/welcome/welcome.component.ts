@@ -7,11 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  icon3: string;
+  date_range: string;
+  edit: string;
+  cloud: string;
 
   constructor() { }
 
   ngOnInit() {
-    this.icon3 = 'cloud';
+    this.date_range = 'date_range';
+    this.edit = 'edit';
+    this.cloud = 'cloud';
   }
 }
