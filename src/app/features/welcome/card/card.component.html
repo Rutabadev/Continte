@@ -1,7 +1,7 @@
 <mat-card class="d-flex">
     <mat-card-content>
        <a [routerLink]="content.routerLink">
-          <button mat-fab color="primary" class="pulse rotate" (mouseenter)="switchIcon()" (mouseleave)="switchIcon()">
+          <button mat-fab color="primary" class="rotate" [class.pulse]="this.pulse" (mouseenter)="switchIcon()" (mouseleave)="switchIcon()">
              <mat-icon>{{content.icon}}</mat-icon>
           </button>
        </a>
