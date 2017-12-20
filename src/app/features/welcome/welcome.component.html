@@ -3,74 +3,8 @@
 </h1>
 <div class="container">
    <div class="row d-flex">
-      <div class="col l4 d-flex">
-         <mat-card>
-            <mat-card-content>
-               <a routerLink="./calendars-infos">
-                     <button mat-fab color="primary" class="pulse rotate" (mouseenter)="date_range = 'add'" (mouseleave)="date_range = 'date_range'">
-                        <mat-icon>{{date_range}}</mat-icon>
-                     </button>
-               </a>
-               <h2 class="title">
-                  Calendars
-               </h2>
-               <h3>Access multiple integration calendars all in one place</h3>
-               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem
-                  quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
-                  eaque dicta adipisci, quae facere odit in illum id soluta!</p>
-            </mat-card-content>
-            <div class="footer-btn">
-                  <a routerLink="./calendars-infos">
-                     <button color="accent" class="footer-btn2" mat-button>learn more</button>
-                  </a>
-            </div>
-         </mat-card>
-      </div>
-      <div class="col l4 d-flex">
-         <mat-card>
-            <mat-card-content>
-               <a routerLink="./edit-infos">
-                  <button mat-fab color="primary" class="pulse rotate" (mouseenter)="edit = 'add'" (mouseleave)="edit = 'edit'">
-                     <mat-icon>{{edit}}</mat-icon>
-                  </button>
-               </a>
-               <h2 class="title">
-                  Edit
-               </h2>
-               <h3>Edit your existing planifications</h3>
-               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem
-                  quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
-                  eaque dicta adipisci, quae facere odit in illum id soluta!</p>
-            </mat-card-content>
-            <div class="footer-btn">
-                  <a routerLink="./edit-infos">
-                     <button color="accent" class="footer-btn2" mat-button>learn more</button>
-                  </a>
-            </div>
-         </mat-card>
-      </div>
-      <div class="col l4 d-flex">
-         <mat-card>
-            <mat-card-content>
-               <a routerLink="./concurencial-infos">
-                  <button mat-fab color="primary" class="pulse rotate" (mouseenter)="cloud = 'add'" (mouseleave)="cloud = 'cloud'">
-                     <mat-icon>{{cloud}}</mat-icon>
-                  </button>
-               </a>
-               <h2 class="title">
-                  Concurencial
-               </h2>
-               <h3>No more concurencial problems because it's a web app</h3>
-               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem
-                  quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi
-                  eaque dicta adipisci, quae facere odit in illum id soluta!</p>
-            </mat-card-content>
-            <div class="footer-btn">
-                  <a routerLink="./concurencial-infos">
-                     <button color="accent" class="footer-btn2" mat-button>learn more</button>
-                  </a>
-            </div>
-         </mat-card>
+      <div *ngFor="let content of contents" class="col l4 d-flex">
+         <app-card [content]="content" class="d-flex"></app-card>
       </div>
    </div>
 </div>

@@ -1,0 +1,19 @@
+<mat-card class="d-flex">
+    <mat-card-content>
+       <a [routerLink]="content.routerLink">
+          <button mat-fab color="primary" class="pulse rotate" (mouseenter)="switchIcon()" (mouseleave)="switchIcon()">
+             <mat-icon>{{content.icon}}</mat-icon>
+          </button>
+       </a>
+       <h2 class="title">
+          {{content.title}}
+       </h2>
+       <h3>{{content.subtitle}}</h3>
+       <p>{{content.text}}</p>
+    </mat-card-content>
+    <div class="footer-btn">
+       <a [routerLink]="content.routerLink">
+          <button color="accent" class="footer-btn2" mat-button>learn more</button>
+       </a>
+    </div>
+ </mat-card>

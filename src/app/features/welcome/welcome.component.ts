@@ -1,3 +1,5 @@
+import { Content } from './content';
+import { CONTENTS } from './mocks';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,15 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  date_range: string;
-  edit: string;
-  cloud: string;
+  contents: Content[];
 
   constructor() { }
 
   ngOnInit() {
-    this.date_range = 'date_range';
-    this.edit = 'edit';
-    this.cloud = 'cloud';
+    this.contents = CONTENTS;
   }
 }

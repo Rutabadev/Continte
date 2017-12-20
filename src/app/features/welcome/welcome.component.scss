@@ -22,55 +22,14 @@ h1 {
     }
 }
 
-.title {
-    padding: 1em;
-}
-
 .d-flex {
     display: flex;
     position: relative;
 }
 
-.footer-btn {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-}
-
-.footer-btn2 {
-    position: relative;
-    left: -50%;
-}
 
 @media(max-width: 992px) {
-    left: 50%;
-}
-
-mat-card-content {
-    padding-bottom: 36px;
-}
-
-@media(min-width: 992px) {
-    mat-card {
-        min-height: 410px;
-    }
-}
-
-@media(max-width: 992px) {
-    mat-card {
-        margin: 1em 0;
-    }
     .d-flex {
         display: inherit;
     }
-}
-
-.rotate mat-icon {
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.rotate:hover mat-icon {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
 }

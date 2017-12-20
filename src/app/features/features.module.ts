@@ -17,8 +17,7 @@ import { EditInfosComponent } from './welcome/edit-infos/edit-infos.component';
 import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concurencial-infos.component';
 import { RouterModule } from '@angular/router';
 import { TodosComponent } from './todos/todos.component';
-
-
+import { CardComponent } from './welcome/card/card.component';
 
 @NgModule({
   imports: [
@@ -41,6 +40,7 @@ import { TodosComponent } from './todos/todos.component';
                   CalendarsInfosComponent,
                   EditInfosComponent,
                   ConcurencialInfosComponent,
-                  TodosComponent]
+                  TodosComponent,
+                  CardComponent]
 })
 export class FeaturesModule { }
