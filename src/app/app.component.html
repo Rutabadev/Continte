@@ -6,7 +6,9 @@
       </li>
    </ul>
 </section> -->
+
 <mat-sidenav-container>
+
    <app-header></app-header>
 
    <mat-sidenav class="mat-elevation-z5" [(opened)]="sharingService.opened" (close)="sharingService.opened = false">
@@ -16,9 +18,11 @@
          </li>
       </ul>
    </mat-sidenav>
-   <div class="spacer"></div>
+
+   <div *ngIf="!spacing" class="spacer"></div>
+   
    <!-- Applying the mat-typography class adds styles for native elements. -->
-   <section class="mat-typography">
+   <section class="mat-typography">       
       <router-outlet></router-outlet>
    </section>
 

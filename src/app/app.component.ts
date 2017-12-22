@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { SharingService } from './sharing.service';
 import { Element } from './core/header/element';
@@ -10,12 +11,19 @@ import { ELEMENTS } from './core/header/mocks';
 })
 
 export class AppComponent implements OnInit {
+  spacing: boolean;
+  router: Router;
   elements: Element[];
 
   sharingService: SharingService;
 
-  constructor(sharingService: SharingService) {
+  constructor(sharingService: SharingService,
+              private _router: Router) {
     this.sharingService = sharingService;
+    this.router = _router;
+    this.router.events.subscribe(() => {
+      this.spacing = this.router.url === '/welcome';
+    });
   }
 
   ngOnInit() {
