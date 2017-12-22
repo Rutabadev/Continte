@@ -10,10 +10,10 @@ h1 {
     /* Adjust these values accordingly */
     top: 7px;
     left: -5px;
-    animation: spin infinite 3s linear;
+    animation: spin-clockwise infinite 3s linear;
 }
 
-@keyframes spin {
+@keyframes spin-clockwise {
     from {
         transform: rotate(0deg);
     }
