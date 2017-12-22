@@ -1,5 +1,16 @@
+#welcome-bar {
+    padding-top: 1.4em;
+    min-height: 200px;    
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4em;
+}
+
 h1 {
     padding-bottom: 2em;
+    font-size: 1.37em;
 }
 
 .icon {

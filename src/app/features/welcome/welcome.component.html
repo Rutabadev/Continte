@@ -1,6 +1,9 @@
-<h1>Welcome to Contintengration, because Excel sheets are
-   <mat-icon class="icon" color="accent">delete_forever</mat-icon>
-</h1>
+<mat-toolbar id="welcome-bar" color="primary">
+   <h1>Welcome to Contintengration, because Excel sheets are
+      <mat-icon class="icon" color="accent">delete_forever</mat-icon>
+   </h1>
+</mat-toolbar>
+
 <div class="container">
    <div class="row d-flex">
       <app-card *ngFor="let content of contents" [content]="content" class="col l4 d-flex"></app-card>
