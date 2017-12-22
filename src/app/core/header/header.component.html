@@ -1,13 +1,15 @@
 <mat-toolbar class="mat-elevation-z6" color="primary">
 
-   <a id="burger-btn" materialize="sideNav" [materializeParams]="[{closeOnClick:true}]" href="#" data-activates="slide-out"
+   <!-- Burger button for materialize sidenav -->
+   <!-- <a id="burger-btn" materialize="sideNav" [materializeParams]="[{closeOnClick:true}]" href="#" data-activates="slide-out"
       class="button-collapse">
       <i class="material-icons">menu</i>
-   </a>
+   </a> -->
 
-   <!-- <button id="burger-btn" mat-icon-button (click)="sharingService.opened = !sharingService.opened">
-        <mat-icon>menu</mat-icon>
-    </button> -->
+   <!-- Burger button for Angular Material sidenav -->
+   <button id="burger-btn" mat-icon-button (click)="sharingService.opened = !sharingService.opened">
+      <mat-icon>menu</mat-icon>
+   </button>
 
    <!-- Navbar Buttons -->
    <a *ngFor='let element of elements' class="menu-element" [routerLink]="element.routerLink">
