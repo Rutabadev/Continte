@@ -18,6 +18,7 @@ import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concure
 import { RouterModule } from '@angular/router';
 import { TodosComponent } from './todos/todos.component';
 import { CardComponent } from './welcome/card/card.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { CardComponent } from './welcome/card/card.component';
     NgbDatepickerModule.forRoot(),
     NgbTimepickerModule.forRoot(),
     CalendarModule,
-    RouterModule
+    RouterModule,
+    HttpModule
   ],
   declarations: [ WelcomeComponent,
                   IntegrationComponent,
