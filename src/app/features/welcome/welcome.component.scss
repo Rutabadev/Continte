@@ -1,6 +1,6 @@
 #welcome-bar {
     padding-top: 1.4em;
-    min-height: 200px;    
+    min-height: 200px;
     list-style: none;
     display: flex;
     align-items: center;
@@ -17,10 +17,10 @@ h1 {
     position: relative;
     font-size: 1.7em;
     width: 50px;
-    height: 45px;
+    height: 55px;
     /* Adjust these values accordingly */
-    top: 7px;
-    left: -5px;
+    top: 12px;
+    left: -3px;
     animation: spin-clockwise infinite 3s linear;
 }
 
