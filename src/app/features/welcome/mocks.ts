@@ -15,7 +15,7 @@ export const CONTENTS: Content[] = [
         subtitle: 'Edit your events',
         // tslint:disable-next-line:max-line-length
         text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi eaque dicta adipisci, quae facere odit in illum id soluta!',
-        routerLink: './calendars-infos'
+        routerLink: './edit-infos'
     },
     {
         icon: 'cloud',
@@ -23,6 +23,6 @@ export const CONTENTS: Content[] = [
         subtitle: 'Multiple users can access the integration planning at the same time',
         // tslint:disable-next-line:max-line-length
         text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at possimus magnam exercitationem, velit voluptatem quia saepe laborum tenetur explicabo assumenda nesciunt eveniet? Repellat repudiandae quisquam, excepturi eaque dicta adipisci, quae facere odit in illum id soluta!',
-        routerLink: './calendars-infos'
+        routerLink: './concurencial-infos'
     }
 ];
