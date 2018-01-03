@@ -3,4 +3,5 @@ export class Element {
     routerLink: string;
     isMain: boolean;
     height: string;
+    icon: string;
 }

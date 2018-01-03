@@ -14,15 +14,16 @@
    <mat-sidenav class="mat-elevation-z5" [(opened)]="sharingService.opened" (close)="sharingService.opened = false">
       <ul>
          <li *ngFor="let element of elements" [routerLink]="element.routerLink">
+            <mat-icon class="icon side-btn" color="accent">{{element.icon}}</mat-icon>
             <button class="side-btn" (click)="sharingService.opened = false" mat-button>{{element.name}}</button>
          </li>
       </ul>
    </mat-sidenav>
 
    <div *ngIf="!spacing" class="spacer"></div>
-   
+
    <!-- Applying the mat-typography class adds styles for native elements. -->
-   <section class="mat-typography">       
+   <section class="mat-typography">
       <router-outlet></router-outlet>
    </section>
 
