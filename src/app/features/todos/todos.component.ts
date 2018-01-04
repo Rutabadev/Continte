@@ -1,6 +1,6 @@
 import { TodosService } from './todos.service';
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { Todo } from './todo';
 
 @Component({
@@ -13,7 +13,7 @@ export class TodosComponent implements OnInit {
   tasks: any[];
   todosService: TodosService;
 
-  constructor(todosService: TodosService, public dialog: MatDialog) {
+  constructor(todosService: TodosService, public dialog: MatDialog, public snackBar: MatSnackBar) {
     this.todosService = todosService;
   }
 
@@ -26,11 +26,17 @@ export class TodosComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddTodoDialogComponent, {
-      width: '250px'
+      width: '250px',
+      data: { name: 'Gilles Poitou' }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // Add new todo here
+      if (result) {
+        this.todosService.createTask(result);
+        this.snackBar.open('Task created', null, {
+          duration: 2000
+        });
+      }
     });
   }
 

@@ -14,7 +14,8 @@ import {
   MatTooltipModule,
   MatCardModule,
   MatGridListModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 @NgModule({
@@ -35,7 +36,8 @@ import {
     MatTooltipModule,
     MatCardModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   declarations: []
 })

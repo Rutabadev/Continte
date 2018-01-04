@@ -18,7 +18,7 @@ import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concure
 import { RouterModule } from '@angular/router';
 import { TodosComponent, AddTodoDialogComponent } from './todos/todos.component';
 import { CardComponent } from './welcome/card/card.component';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SnowComponent } from './snow/snow.component';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { SnowComponent } from './snow/snow.component';
     NgbTimepickerModule.forRoot(),
     CalendarModule,
     RouterModule,
-    HttpModule
+    HttpClientModule
   ],
   declarations: [WelcomeComponent,
     IntegrationComponent,
