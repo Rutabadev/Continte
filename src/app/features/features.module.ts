@@ -20,6 +20,7 @@ import { TodosComponent, AddTodoDialogComponent } from './todos/todos.component'
 import { CardComponent } from './welcome/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SnowComponent } from './snow/snow.component';
+import { ElsaComponent } from './elsa/elsa.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { SnowComponent } from './snow/snow.component';
     CardComponent,
     SnowComponent,
     TodosComponent,
-    AddTodoDialogComponent],
+    AddTodoDialogComponent,
+    ElsaComponent],
   entryComponents: [
     AddTodoDialogComponent
   ]
