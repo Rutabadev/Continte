@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 import { TodosComponent } from './todos/todos.component';
 import { CardComponent } from './welcome/card/card.component';
 import { HttpModule } from '@angular/http';
+import { SnowComponent } from './snow/snow.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { HttpModule } from '@angular/http';
                   EditInfosComponent,
                   ConcurencialInfosComponent,
                   TodosComponent,
-                  CardComponent]
+                  CardComponent,
+                  SnowComponent]
 })
 export class FeaturesModule { }

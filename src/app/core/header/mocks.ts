@@ -35,5 +35,12 @@ export const ELEMENTS: Element[] = [
       isMain: true,
       height: 'flat',
       icon: 'check_circle'
+   },
+   {
+      name: 'Snow',
+      routerLink: '/snow',
+      isMain: false,
+      height: 'flat',
+      icon: 'radio_button_unchecked'
    }
 ];

@@ -1,3 +1,4 @@
+import { SnowComponent } from './features/snow/snow.component';
 import { TodosComponent } from './features/todos/todos.component';
 import { ConcurencialInfosComponent } from './features/welcome/concurencial-infos/concurencial-infos.component';
 import { CalendarsInfosComponent } from './features/welcome/calendars-infos/calendars-infos.component';
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'calendar', component: IntegrationComponent },
   { path: 'panda', component: PandaComponent },
   { path: 'todos', component: TodosComponent },
+  { path: 'snow', component: SnowComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: '404', component: NotFoundComponent },
 
