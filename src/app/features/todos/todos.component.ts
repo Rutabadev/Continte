@@ -27,7 +27,7 @@ export class TodosComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddTodoDialogComponent, {
       width: '250px',
-      data: { name: 'Gilles Poitou' }
+      data: { name: null }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -38,6 +38,18 @@ export class TodosComponent implements OnInit {
         });
       }
     });
+  }
+
+  delete(id) {
+    this.todosService.deleteTask(id).subscribe(result => {
+      this.snackBar.open('Task deleted', null, {
+        duration: 2000
+      });
+    });
+  }
+
+  update(task) {
+    alert('Not implemented yet\n' + JSON.stringify(task));
   }
 
 }

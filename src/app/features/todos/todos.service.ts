@@ -30,6 +30,6 @@ export class TodosService {
 
   deleteTask(id) {
     return this.http.delete(environment.apiUrl + 'tasks/' + id)
-      .map(response => <any[]>response);
+      .map(response => <any>response);
   }
 }

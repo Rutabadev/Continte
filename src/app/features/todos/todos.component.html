@@ -5,12 +5,18 @@
    <mat-grid-list cols="4" gutterSize="1em">
       <mat-grid-tile *ngFor="let task of tasks">
          <mat-card>
-            <mat-card-title>
-               <p>{{task.name}}</p>
-            </mat-card-title>
-            <p>id: {{task._id}}</p>
-            <p>{{task.status}}</p>
-            <p>{{task.creation_date | date}}</p>
+            <mat-card-content>
+               <mat-card-title>
+                  <p>{{task.name}}</p>
+               </mat-card-title>
+               <p>id: {{task._id}}</p>
+               <p>{{task.status}}</p>
+               <p>{{task.creation_date | date}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+               <button mat-button color="primary" (click)="delete(task._id)">DELETE</button>
+               <button mat-button color="primary" (click)="update(task)">UPDATE</button>
+            </mat-card-actions>
          </mat-card>
       </mat-grid-tile>
    </mat-grid-list>
