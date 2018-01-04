@@ -21,14 +21,9 @@
          "../node_modules/bootstrap/dist/css/bootstrap.min.css",
          "../node_modules/angular-calendar/dist/css/angular-calendar.css",
          "styles.scss",
-         "theme.scss",
-         "../node_modules/materialize-css/dist/css/materialize.css"
+         "theme.scss"
       ],
-      "scripts": [
-         "../node_modules/jquery/dist/jquery.js",
-         "../node_modules/hammerjs/hammer.js",
-         "../node_modules/materialize-css/dist/js/materialize.js"
-      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
          "dev": "environments/environment.ts",

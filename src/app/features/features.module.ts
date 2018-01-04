@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CalendarComponent } from './integration/calendar/calendar.component';
-import { NgbDatepickerModule, NgbTimepickerModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerModule, NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarHeaderComponent } from './integration/calendar/calendar-header/calendar-header.component';
 import { DateTimePickerComponent } from './integration/calendar/date-time-picker/date-time-picker.component';
@@ -16,7 +16,7 @@ import { CalendarsInfosComponent } from './welcome/calendars-infos/calendars-inf
 import { EditInfosComponent } from './welcome/edit-infos/edit-infos.component';
 import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concurencial-infos.component';
 import { RouterModule } from '@angular/router';
-import { TodosComponent } from './todos/todos.component';
+import { TodosComponent, AddTodoDialogComponent } from './todos/todos.component';
 import { CardComponent } from './welcome/card/card.component';
 import { HttpModule } from '@angular/http';
 import { SnowComponent } from './snow/snow.component';
@@ -32,19 +32,23 @@ import { SnowComponent } from './snow/snow.component';
     RouterModule,
     HttpModule
   ],
-  declarations: [ WelcomeComponent,
-                  IntegrationComponent,
-                  CalendarComponent,
-                  CalendarHeaderComponent,
-                  DateTimePickerComponent,
-                  HomeComponent,
-                  NotFoundComponent,
-                  PandaComponent,
-                  CalendarsInfosComponent,
-                  EditInfosComponent,
-                  ConcurencialInfosComponent,
-                  TodosComponent,
-                  CardComponent,
-                  SnowComponent]
+  declarations: [WelcomeComponent,
+    IntegrationComponent,
+    CalendarComponent,
+    CalendarHeaderComponent,
+    DateTimePickerComponent,
+    HomeComponent,
+    NotFoundComponent,
+    PandaComponent,
+    CalendarsInfosComponent,
+    EditInfosComponent,
+    ConcurencialInfosComponent,
+    CardComponent,
+    SnowComponent,
+    TodosComponent,
+    AddTodoDialogComponent],
+  entryComponents: [
+    AddTodoDialogComponent
+  ]
 })
 export class FeaturesModule { }

@@ -4,14 +4,12 @@ import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { MaterializeModule } from 'angular2-materialize';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule,
-    MaterializeModule
+    RouterModule
   ],
   exports: [
     MaterialModule,

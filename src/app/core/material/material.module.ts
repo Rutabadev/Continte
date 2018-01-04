@@ -13,7 +13,8 @@ import {
   MatSidenavModule,
   MatTooltipModule,
   MatCardModule,
-  MatGridListModule
+  MatGridListModule,
+  MatDialogModule
 } from '@angular/material';
 
 @NgModule({
@@ -33,7 +34,8 @@ import {
     MatSidenavModule,
     MatTooltipModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   declarations: []
 })
