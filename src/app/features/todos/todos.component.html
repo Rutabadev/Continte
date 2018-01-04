@@ -1,8 +1,10 @@
 <div class="container">
-   <mat-grid-list cols="4" rowHeight="4:3" gutterSize="1em">
+   <mat-grid-list cols="4" gutterSize="1em">
       <mat-grid-tile *ngFor="let task of tasks">
          <mat-card>
-            <p>{{task.name}}</p>
+            <mat-card-title>
+               <p>{{task.name}}</p>
+            </mat-card-title>
             <p>id: {{task._id}}</p>
             <p>{{task.status}}</p>
             <p>{{task.creation_date | date}}</p>
