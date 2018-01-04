@@ -33,7 +33,6 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         if (localStorage.getItem('darkTheme') === 'true') {
             this.setDarkTheme();
-            this.checked = true;
         } else {
             this.setLightTheme();
         }
@@ -45,11 +44,9 @@ export class HeaderComponent implements OnInit {
         if (localStorage.getItem('darkTheme') === 'false' || localStorage.getItem('darkTheme') === null) {
             this.setDarkTheme();
             localStorage.setItem('darkTheme', 'true');
-            this.checked = true;
         } else {
             this.setLightTheme();
             localStorage.setItem('darkTheme', 'false');
-            this.checked = false;
         }
     }
 
