@@ -1,6 +1,3 @@
-// mat-sidenav {
-//     min-width: 250px;
-// }
 .side-btn {
    width: 100%;
    font-size: 1.4em;
@@ -22,4 +19,8 @@ mat-icon {
 mat-sidenav {
    max-width: 80%;
    min-width: 60%;
+}
+
+#content {
+    margin-top: 64px;
 }
