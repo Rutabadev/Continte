@@ -42,5 +42,12 @@ export const ELEMENTS: Element[] = [
       isMain: false,
       height: 'flat',
       icon: 'radio_button_unchecked'
+   },
+   {
+      name: 'Elsa',
+      routerLink: '/elsa',
+      isMain: false,
+      height: 'flat',
+      icon: 'favorite'
    }
 ];

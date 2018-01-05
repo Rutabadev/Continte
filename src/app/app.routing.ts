@@ -11,6 +11,7 @@ import { HomeComponent } from './features/home/home.component';
 import { NotFoundComponent } from './features/not-found/not-found.component';
 import { PandaComponent } from './features/panda/panda.component';
 import { EditInfosComponent } from './features/welcome/edit-infos/edit-infos.component';
+import { ElsaComponent } from './features/elsa/elsa.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'panda', component: PandaComponent },
   { path: 'todos', component: TodosComponent },
   { path: 'snow', component: SnowComponent },
+  { path: 'elsa', component: ElsaComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: '404', component: NotFoundComponent },
 
