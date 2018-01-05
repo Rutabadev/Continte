@@ -22,5 +22,11 @@ mat-sidenav {
 }
 
 #content {
-    margin-top: 64px;
+   margin-top: 64px;
+}
+
+@media(max-width: 600px) {
+   #content {
+      margin-top: 56px;
+   }
 }
