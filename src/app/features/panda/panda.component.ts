@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-panda',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panda.component.scss']
 })
 export class PandaComponent implements OnInit {
+  @ViewChild('video') video: any;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleVideo(event: any) {
+    this.video.nativeElement.play();
+  }
 }
