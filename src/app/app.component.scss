@@ -1,20 +1,25 @@
 // mat-sidenav {
 //     min-width: 250px;
 // }
-
 .side-btn {
-    width: 100%;
-    font-size: 1.4em;
+   width: 100%;
+   font-size: 1.4em;
 }
 
 .spacer {
-    padding-bottom: 3em;
+   padding-bottom: 3em;
+}
+
+ul {
+   list-style-type: none;
+   padding: 0;
 }
 
 mat-icon {
-  margin-bottom: 5px;
+   margin-bottom: 5px;
 }
 
 mat-sidenav {
-    min-width: 300px;
+   max-width: 80%;
+   min-width: 60%;
 }
