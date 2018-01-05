@@ -8,9 +8,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class PandaComponent implements OnInit {
   @ViewChild('video') video: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.togglePlay();
+  }
+
+  togglePlay() {
     this.video.nativeElement.play();
   }
 }
