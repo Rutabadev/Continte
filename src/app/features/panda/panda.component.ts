@@ -11,6 +11,7 @@ export class PandaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.video.nativeElement.play();
   }
 
   toggleVideo() {
