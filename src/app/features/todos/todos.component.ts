@@ -10,6 +10,7 @@ import { Todo } from './todo';
   providers: [TodosService]
 })
 export class TodosComponent implements OnInit {
+  loading = true;
   tasks: any[];
   todosService: TodosService;
 
@@ -20,6 +21,7 @@ export class TodosComponent implements OnInit {
   ngOnInit() {
     this.todosService.getAllTasks().subscribe(tasks => {
       this.tasks = tasks;
+      this.loading = false;
     }
     );
   }

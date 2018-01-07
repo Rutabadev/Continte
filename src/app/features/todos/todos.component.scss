@@ -10,10 +10,14 @@ mat-grid-list {
 }
 
 mat-card {
-   width: 98%;
-   height: 98%;
+    width: 98%;
+    height: 98%;
 }
 
 #cards {
     margin-bottom: 2em;
+}
+
+mat-spinner {
+    margin: 15% auto;
 }

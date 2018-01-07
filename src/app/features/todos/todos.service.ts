@@ -20,8 +20,8 @@ export class TodosService {
   createTask(task) {
     this.http.post(environment.apiUrl + 'tasks/', task)
       .subscribe(data => { }, error => {
-      console.log('error: ' + JSON.stringify(error));
-    });
+        console.log('error: ' + JSON.stringify(error));
+      });
   }
 
   updateTask(id) {
