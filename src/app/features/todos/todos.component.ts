@@ -23,8 +23,7 @@ export class TodosComponent implements OnInit {
       this.todosService.getAllTasks().subscribe(tasks => {
          this.tasks = tasks;
          this.loading = false;
-      }
-      );
+      });
    }
 
    // Creates a task if no parameter, updates othewise
@@ -55,6 +54,7 @@ export class TodosComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => {
          // Check if the dialog as been completed or just exited
          if (result) {
+            result.task.creation_date = Date.now();
             // Check if we need to create or update a task
             if (result.isUpdate) {
                this.todosService.updateTask(result.task);
@@ -62,10 +62,17 @@ export class TodosComponent implements OnInit {
                   duration: 2000
                });
             } else {
-               this.todosService.createTask(result.task);
+               const inital_task = Object.assign({}, result.task);
+               // Temporary changes before we get the actual task from the db
                result.task._id = 'on sait pas encore';
                result.task.status = 'pending';
                this.tasks.push(result.task);
+               this.todosService.createTask(inital_task).subscribe(
+                  dbTask => {
+                     result.task._id = dbTask._id;
+                  }, error => {
+                     console.log('error: ' + JSON.stringify(error));
+                  });
                this.snackBar.open('Task created', null, {
                   duration: 2000
                });
@@ -101,5 +108,4 @@ export class AddTodoDialogComponent implements OnInit {
 
    ngOnInit() {
    }
-
 }
