@@ -10,8 +10,8 @@ import { Todo } from './todo';
    providers: [TodosService]
 })
 export class TodosComponent implements OnInit {
-   loading = true;
-   tasks: any[];
+   loading: boolean;
+   tasks: Todo[];
    todosService: TodosService;
 
    constructor(todosService: TodosService, public dialog: MatDialog, public snackBar: MatSnackBar) {
@@ -19,6 +19,7 @@ export class TodosComponent implements OnInit {
    }
 
    ngOnInit() {
+      this.loading = true;
       this.todosService.getAllTasks().subscribe(tasks => {
          this.tasks = tasks;
          this.loading = false;
@@ -62,6 +63,8 @@ export class TodosComponent implements OnInit {
                });
             } else {
                this.todosService.createTask(result.task);
+               result.task._id = 'on sait pas encore';
+               result.task.status = 'pending';
                this.tasks.push(result.task);
                this.snackBar.open('Task created', null, {
                   duration: 2000
