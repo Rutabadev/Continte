@@ -10,7 +10,7 @@ Web App available here: <https://continte.herokuapp.com>
 
 You also need MongoDB and the back end here: <https://gitlab.com/Rutabadev/contintegration-back>
 
-It needs to be clone on the same folder as this repo as it is lauched via relative path.
+It needs to be cloned on the same folder as this repo as it is lauched via relative path.
 
 Once you're set just run `npm run dev-install` on the back end repository.
 
