@@ -1,11 +1,5 @@
 <mat-toolbar id="header" class="mat-elevation-z6" color="primary">
 
-   <!-- Burger button for materialize sidenav -->
-   <!-- <a id="burger-btn" materialize="sideNav" [materializeParams]="[{closeOnClick:true}]" href="#" data-activates="slide-out"
-      class="button-collapse">
-      <i class="material-icons">menu</i>
-   </a> -->
-
    <!-- Burger button for Angular Material sidenav -->
    <button id="burger-btn" mat-icon-button (click)="sharingService.opened = !sharingService.opened">
       <mat-icon>menu</mat-icon>
