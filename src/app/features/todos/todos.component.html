@@ -1,9 +1,9 @@
 <div class="container">
-    
+
     <button mat-raised-button color="accent" (click)="openDialog()">Add Todo</button>
-    
+
     <mat-spinner *ngIf="loading"></mat-spinner>
-    
+
       <div class="row">
           <div id="cards" *ngFor="let task of tasks" class="col-md-3">
              <mat-card>
@@ -17,7 +17,7 @@
                 </mat-card-content>
                 <mat-card-actions>
                    <button mat-button color="primary" (click)="delete(task._id)">DELETE</button>
-                   <button mat-button color="primary" (click)="update(task)">UPDATE</button>
+                   <button mat-button color="primary" (click)="openDialog(task)">UPDATE</button>
                 </mat-card-actions>
              </mat-card>
           </div>
