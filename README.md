@@ -6,6 +6,16 @@ Also a playground to mess with Angular Material and stuff.
 
 Web App available here: <https://continte.herokuapp.com>
 
+## Installation for developpement
+
+You also need MongoDB and the back end here: <https://gitlab.com/Rutabadev/contintegration-back>
+
+It needs to be clone on the same folder as this repo as it is lauched via relative path.
+
+Once you're set just run `npm run dev-install` on the back end repository.
+
+After the back end is set up, running `npm start` will launch concurrently the front and back end. If you do not use the start script, the back end will not be launched with the app.
+
 ## Angular CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
