@@ -35,6 +35,7 @@ export class TodosComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.todosService.createTask(result);
+        this.tasks.push(result);
         this.snackBar.open('Task created', null, {
           duration: 2000
         });
@@ -44,6 +45,7 @@ export class TodosComponent implements OnInit {
 
   delete(id) {
     this.todosService.deleteTask(id).subscribe(result => {
+      this.tasks = this.tasks.filter(task => (task._id !== id));
       this.snackBar.open('Task deleted', null, {
         duration: 2000
       });
