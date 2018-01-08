@@ -26,6 +26,7 @@ export class TodosComponent implements OnInit {
       );
    }
 
+   // Creates a task if no parameter, updates othewise
    openDialog(task): void {
       let options;
 
