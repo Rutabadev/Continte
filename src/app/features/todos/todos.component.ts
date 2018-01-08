@@ -34,14 +34,18 @@ export class TodosComponent implements OnInit {
          options = {
             width: '250px',
             data: {
-               name: task.name,
+               task: task,
                isUpdate: true
             }
          };
       } else {
          options = {
             width: '250px',
-            data: { name: null }
+            data: {
+               task: {
+                  name: null
+               }
+            }
          };
       }
 
@@ -52,8 +56,7 @@ export class TodosComponent implements OnInit {
          if (result) {
             // Check if we need to create or update a task
             if (result.isUpdate) {
-               this.todosService.updateTask(result);
-               this.tasks[this.tasks.indexOf(task)] = result;
+               this.todosService.updateTask(result.task);
                this.snackBar.open('Task updated', null, {
                   duration: 2000
                });
