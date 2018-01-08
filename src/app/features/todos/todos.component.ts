@@ -61,8 +61,8 @@ export class TodosComponent implements OnInit {
                   duration: 2000
                });
             } else {
-               this.todosService.createTask(result);
-               this.tasks.push(result);
+               this.todosService.createTask(result.task);
+               this.tasks.push(result.task);
                this.snackBar.open('Task created', null, {
                   duration: 2000
                });
