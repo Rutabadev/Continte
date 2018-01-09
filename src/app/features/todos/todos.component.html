@@ -31,7 +31,7 @@
                      </mat-card-title>
                      <p>id: {{task._id}}</p>
                      <p>{{task.status}}</p>
-                     <p>{{task.creation_date | date}}</p>
+                     <p>{{task.creation_date | dateTime}}</p>
                   </mat-card-content>
                   <mat-card-actions>
                      <button mat-button color="primary" (click)="delete(task._id)">DELETE</button>
