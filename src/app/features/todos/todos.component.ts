@@ -16,7 +16,7 @@ export class TodosComponent implements OnInit {
    todosService: TodosService;
    myOptions: MasonryOptions = {
       transitionDuration: '0.8s',
-      fitWidth: true,
+      columnWidth: 270,
       gutter: 20
    };
 
