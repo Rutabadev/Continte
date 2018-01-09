@@ -23,6 +23,10 @@ masonry-brick {
     width: 270px;
 }
 
+mat-card-title p {
+   word-wrap: break-word;
+}
+
 mat-spinner {
     margin: 15% auto;
 }
