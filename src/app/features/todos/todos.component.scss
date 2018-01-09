@@ -14,8 +14,12 @@ mat-card {
     height: 98%;
 }
 
-#cards {
-    margin-bottom: 2em;
+masonry {
+   margin: 0 auto;
+}
+
+masonry-brick {
+    margin: 2em 2em;
 }
 
 mat-spinner {

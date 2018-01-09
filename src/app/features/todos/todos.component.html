@@ -1,25 +1,45 @@
 <div class="container">
 
-    <button mat-raised-button color="accent" (click)="openDialog(null)">Add Todo</button>
+   <button mat-raised-button color="accent" (click)="openDialog(null)">Add Todo</button>
 
-    <mat-spinner *ngIf="loading"></mat-spinner>
+   <mat-spinner *ngIf="loading"></mat-spinner>
 
-      <div class="row">
-          <div id="cards" *ngFor="let task of tasks" class="col-md-3">
-             <mat-card>
-                <mat-card-content>
-                   <mat-card-title>
-                      <p>{{task.name}}</p>
-                   </mat-card-title>
-                   <p>id: {{task._id}}</p>
-                   <p>{{task.status}}</p>
-                   <p>{{task.creation_date | date}}</p>
-                </mat-card-content>
-                <mat-card-actions>
-                   <button mat-button color="primary" (click)="delete(task._id)">DELETE</button>
-                   <button mat-button color="primary" (click)="openDialog(task)">UPDATE</button>
-                </mat-card-actions>
-             </mat-card>
-          </div>
+   <div class="row">
+      <!-- <div id="cards" *ngFor="let task of tasks" class="col-md-3">
+         <mat-card>
+            <mat-card-content>
+               <mat-card-title>
+                  <p>{{task.name}}</p>
+               </mat-card-title>
+               <p>id: {{task._id}}</p>
+               <p>{{task.status}}</p>
+               <p>{{task.creation_date | date}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+               <button mat-button color="primary" (click)="delete(task._id)">DELETE</button>
+               <button mat-button color="primary" (click)="openDialog(task)">UPDATE</button>
+            </mat-card-actions>
+         </mat-card>
+      </div> -->
+      <div class="col-md-12">
+         <masonry [options]="myOptions">
+            <masonry-brick *ngFor="let task of tasks">
+               <mat-card>
+                  <mat-card-content>
+                     <mat-card-title>
+                        <p>{{task.name}}</p>
+                     </mat-card-title>
+                     <p>id: {{task._id}}</p>
+                     <p>{{task.status}}</p>
+                     <p>{{task.creation_date | date}}</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                     <button mat-button color="primary" (click)="delete(task._id)">DELETE</button>
+                     <button mat-button color="primary" (click)="openDialog(task)">UPDATE</button>
+                  </mat-card-actions>
+               </mat-card>
+            </masonry-brick>
+         </masonry>
       </div>
+   </div>
 </div>

@@ -2,6 +2,7 @@ import { TodosService } from './todos.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { Todo } from './todo';
+import { MasonryOptions } from 'angular2-masonry';
 
 @Component({
    selector: 'app-todos',
@@ -13,6 +14,10 @@ export class TodosComponent implements OnInit {
    loading: boolean;
    tasks: Todo[];
    todosService: TodosService;
+   myOptions: MasonryOptions = {
+      transitionDuration: '0.8s',
+      fitWidth: true
+   };
 
    constructor(todosService: TodosService, public dialog: MatDialog, public snackBar: MatSnackBar) {
       this.todosService = todosService;

@@ -21,6 +21,7 @@ import { CardComponent } from './welcome/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SnowComponent } from './snow/snow.component';
 import { ElsaComponent } from './elsa/elsa.component';
+import { MasonryModule } from 'angular2-masonry';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { ElsaComponent } from './elsa/elsa.component';
     NgbTimepickerModule.forRoot(),
     CalendarModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MasonryModule
   ],
   declarations: [WelcomeComponent,
     IntegrationComponent,
