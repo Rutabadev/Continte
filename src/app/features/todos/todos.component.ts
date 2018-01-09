@@ -40,7 +40,7 @@ export class TodosComponent implements OnInit {
          options = {
             width: '250px',
             data: {
-               task: task,
+               inital_task: task,
                isUpdate: true
             }
          };
@@ -60,22 +60,23 @@ export class TodosComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => {
          // Check if the dialog as been completed or just exited
          if (result) {
-            result.task.creation_date = Date.now();
+            result.new_task.creation_date = Date.now();
             // Check if we need to create or update a task
             if (result.isUpdate) {
-               this.todosService.updateTask(result.task);
+               this.todosService.updateTask(result.new_task);
+               Object.assign(result.inital_task, result.new_task);
                this.snackBar.open('Task updated', null, {
                   duration: 2000
                });
             } else {
-               const inital_task = Object.assign({}, result.task);
+               const inital_task = Object.assign({}, result.new_task);
                // Temporary changes before we get the actual task from the db
-               result.task._id = 'on sait pas encore';
-               result.task.status = 'pending';
-               this.tasks.push(result.task);
+               result.new_task._id = 'on sait pas encore';
+               result.new_task.status = 'pending';
+               this.tasks.push(result.new_task);
                this.todosService.createTask(inital_task).subscribe(
                   dbTask => {
-                     result.task._id = dbTask._id;
+                     Object.assign(result.new_task, dbTask);
                   }, error => {
                      console.log('error: ' + JSON.stringify(error));
                   });
@@ -113,5 +114,6 @@ export class AddTodoDialogComponent implements OnInit {
       @Inject(MAT_DIALOG_DATA) public data: any) { }
 
    ngOnInit() {
+      this.data.new_task = Object.assign({}, this.data.inital_task);
    }
 }
