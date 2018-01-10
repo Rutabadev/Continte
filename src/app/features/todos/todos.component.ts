@@ -3,6 +3,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { Todo } from './todo';
 import { MasonryOptions } from 'angular2-masonry';
+import { HttpClient, HttpHeaders, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http';
 
 @Component({
    selector: 'app-todos',
@@ -14,6 +15,7 @@ export class TodosComponent implements OnInit {
    loading: boolean;
    tasks: Todo[];
    todosService: TodosService;
+   progress_value = 0;
    myOptions: MasonryOptions = {
       transitionDuration: '0.8s',
       columnWidth: 270,
@@ -21,12 +23,26 @@ export class TodosComponent implements OnInit {
       fitWidth: true
    };
 
-   constructor(todosService: TodosService, public dialog: MatDialog, public snackBar: MatSnackBar) {
+   constructor(todosService: TodosService,
+      public dialog: MatDialog,
+      public snackBar: MatSnackBar,
+      private http: HttpClient) {
       this.todosService = todosService;
    }
 
    ngOnInit() {
       this.loading = true;
+      this.http.request(this.todosService.getAllTasksRequest()).subscribe(event => {
+         // Via this API, you get access to the raw event stream.
+         // Look for download progress events.
+         if (event.type === HttpEventType.DownloadProgress) {
+            // This is an upload progress event. Compute and show the % done:
+            this.progress_value = Math.round(100 * event.loaded / event.total);
+            console.log(`File is ${this.progress_value}% downloaded.`);
+         } else if (event instanceof HttpResponse) {
+            console.log('File is completely downloaded!');
+         }
+      });
       this.todosService.getAllTasks().subscribe(tasks => {
          this.tasks = tasks;
          this.loading = false;

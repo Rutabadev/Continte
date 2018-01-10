@@ -1,6 +1,6 @@
 import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 
 @Injectable()
 export class TodosService {
@@ -10,6 +10,10 @@ export class TodosService {
    getAllTasks() {
       return this.http.get(environment.apiUrl + 'tasks/')
          .map(response => <any[]>response);
+   }
+
+   getAllTasksRequest() {
+      return new HttpRequest('GET', environment.apiUrl + 'tasks/', { reportProgress: true });
    }
 
    getTask(id) {
