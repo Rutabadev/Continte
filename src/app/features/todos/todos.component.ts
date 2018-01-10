@@ -17,7 +17,8 @@ export class TodosComponent implements OnInit {
    myOptions: MasonryOptions = {
       transitionDuration: '0.8s',
       columnWidth: 270,
-      gutter: 20
+      gutter: 20,
+      fitWidth: true
    };
 
    constructor(todosService: TodosService, public dialog: MatDialog, public snackBar: MatSnackBar) {
