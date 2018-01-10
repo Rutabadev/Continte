@@ -32,20 +32,18 @@ export class TodosComponent implements OnInit {
 
    ngOnInit() {
       this.loading = true;
-      this.http.request(this.todosService.getAllTasksRequest()).subscribe(event => {
+      this.http.request(this.todosService.getAllTasksRequest())
+      .map(response => <any>response)
+      .subscribe(event => {
          // Via this API, you get access to the raw event stream.
          // Look for download progress events.
          if (event.type === HttpEventType.DownloadProgress) {
-            // This is an upload progress event. Compute and show the % done:
+            // This is an download progress event. Compute and show the % done:
             this.progress_value = Math.round(100 * event.loaded / event.total);
-            console.log(`File is ${this.progress_value}% downloaded.`);
          } else if (event instanceof HttpResponse) {
-            console.log('File is completely downloaded!');
+            this.tasks = event.body;
+            this.loading = false;
          }
-      });
-      this.todosService.getAllTasks().subscribe(tasks => {
-         this.tasks = tasks;
-         this.loading = false;
       });
    }
 
