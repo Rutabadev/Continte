@@ -15,4 +15,8 @@ export class AddTodoDialogComponent implements OnInit {
    ngOnInit() {
        this.data.new_task = Object.assign({}, this.data.inital_task);
    }
+
+   onSubmit() {
+      this.dialogRef.close(this.data);
+   }
 }
