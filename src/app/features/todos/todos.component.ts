@@ -6,6 +6,7 @@ import { MasonryOptions } from 'angular2-masonry';
 import { HttpClient, HttpHeaders, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http';
 // tslint:disable-next-line:import-blacklist
 import { Observable } from 'rxjs/Rx';
+import { AddTodoDialogComponent } from './add-todo-dialog/add-todo-dialog.component';
 
 @Component({
     selector: 'app-todos',
@@ -38,7 +39,6 @@ export class TodosComponent implements OnInit {
         const subscription = timer.takeWhile(ev => ev < 37).subscribe(() => this.progress_value++);
         this.http.request(this.todosService.getAllTasksRequest())
             .map(response => <any>response)
-            .delay(20000)
             .subscribe(event => {
                 // Via this API, you get access to the raw event stream.
                 // Look for download progress events.
@@ -125,19 +125,4 @@ export class TodosComponent implements OnInit {
         alert('Not implemented yet\n' + JSON.stringify(task));
     }
 
-}
-
-@Component({
-    selector: 'app-add-todo-dialog',
-    templateUrl: './add-todo-dialog.component.html',
-    styleUrls: ['./add-todo-dialog.component.scss']
-})
-export class AddTodoDialogComponent implements OnInit {
-
-    constructor(public dialogRef: MatDialogRef<AddTodoDialogComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-    ngOnInit() {
-        this.data.new_task = Object.assign({}, this.data.inital_task);
-    }
 }

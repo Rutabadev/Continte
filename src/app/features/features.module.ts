@@ -16,7 +16,8 @@ import { CalendarsInfosComponent } from './welcome/calendars-infos/calendars-inf
 import { EditInfosComponent } from './welcome/edit-infos/edit-infos.component';
 import { ConcurencialInfosComponent } from './welcome/concurencial-infos/concurencial-infos.component';
 import { RouterModule } from '@angular/router';
-import { TodosComponent, AddTodoDialogComponent } from './todos/todos.component';
+import { TodosComponent } from './todos/todos.component';
+import { AddTodoDialogComponent} from './todos/add-todo-dialog/add-todo-dialog.component';
 import { CardComponent } from './welcome/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SnowComponent } from './snow/snow.component';
