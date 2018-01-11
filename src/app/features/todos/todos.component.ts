@@ -64,6 +64,7 @@ export class TodosComponent implements OnInit {
          options = {
             width: '250px',
             data: {
+               card_title: 'Update Task',
                inital_task: task,
                isUpdate: true
             }
@@ -72,6 +73,7 @@ export class TodosComponent implements OnInit {
          options = {
             width: '250px',
             data: {
+               card_title: 'Create Task',
                inital_task: {
                   status: 'pending'
                }
