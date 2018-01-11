@@ -3,6 +3,13 @@
    <mat-form-field>
       <input matInput (keyup.enter)="this.dialogRef.close(data)" [(ngModel)]="data.new_task.name" placeholder="Name">
    </mat-form-field>
+   <mat-form-field>
+      <mat-select [(value)]="data.new_task.status">
+         <mat-option value="pending">pending</mat-option>
+         <mat-option value="ongoing">ongoing</mat-option>
+         <mat-option value="completed">completed</mat-option>
+      </mat-select>
+   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
    <button mat-button mat-dialog-close>No</button>
