@@ -5,7 +5,7 @@ export class Todo {
    status: StatusEnum;
 }
 
-enum StatusEnum {
+export enum StatusEnum {
    'pending',
    'ongoing',
    'completed'

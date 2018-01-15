@@ -1,7 +1,7 @@
 import { TodosService } from './todos.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
-import { Todo } from './todo';
+import { Todo, StatusEnum } from './todo';
 import { MasonryOptions } from 'angular2-masonry';
 import { HttpClient, HttpHeaders, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http';
 // tslint:disable-next-line:import-blacklist
@@ -16,6 +16,8 @@ import { AddTodoDialogComponent } from './add-todo-dialog/add-todo-dialog.compon
 })
 export class TodosComponent implements OnInit {
    loading: boolean;
+   statusFilter: string;
+   statuses: ['all', 'pending', 'ongoing', 'completed'];
    tasks: Todo[];
    todosService: TodosService;
    progress_value = 0;

@@ -2,6 +2,18 @@
 
    <button mat-raised-button color="accent" (click)="openDialog(null)">Add Todo</button>
 
+   <mat-radio-group [(ngModel)]="statusFilter">
+      <mat-radio-button *ngFor="let status of statuses" [value]="status">
+        {{status}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-radio-group [(ngModel)]="statusFilter">
+      <mat-radio-button value="status">
+        hey
+      </mat-radio-button>
+    </mat-radio-group>
+
    <mat-progress-spinner *ngIf="loading" [value]="progress_value"></mat-progress-spinner>
 
    <masonry [options]="myOptions">
