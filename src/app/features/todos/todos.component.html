@@ -2,15 +2,11 @@
 
    <button mat-raised-button color="accent" (click)="openDialog(null)">Add Todo</button>
 
-   <mat-radio-group [(ngModel)]="statusFilter">
-      <mat-radio-button *ngFor="let status of statuses" [value]="status">
-        {{status}}
-      </mat-radio-button>
-    </mat-radio-group>
+   <br>
 
-    <mat-radio-group [(ngModel)]="statusFilter">
-      <mat-radio-button value="status">
-        hey
+   <mat-radio-group [(ngModel)]="statusFilter">
+      <mat-radio-button color='primary' *ngFor="let status of statuses" [value]="status">
+        {{status}}
       </mat-radio-button>
     </mat-radio-group>
 
