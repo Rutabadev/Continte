@@ -4,7 +4,7 @@
 
    <br>
 
-   <mat-radio-group [(ngModel)]="statusFilter">
+   <mat-radio-group [(ngModel)]="statusFilter" (change)="updateTasksShown()">
       <mat-radio-button color='primary' *ngFor="let status of statuses" [value]="status">
         {{status}}
       </mat-radio-button>
@@ -13,14 +13,14 @@
    <mat-progress-spinner *ngIf="loading" [value]="progress_value"></mat-progress-spinner>
 
    <masonry [options]="myOptions">
-      <masonry-brick *ngFor="let task of tasks">
+      <masonry-brick *ngFor="let task of tasksShown">
          <mat-card>
             <mat-card-content>
                <mat-card-title>
                   <p>{{task.name}}</p>
                </mat-card-title>
                <p>id: {{task._id}}</p>
-               <p>{{task.status}}</p>
+               <p>{{task.status[0]}}</p>
                <p>{{task.creation_date | dateTime}}</p>
             </mat-card-content>
             <mat-card-actions>

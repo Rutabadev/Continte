@@ -5,7 +5,7 @@
          <input matInput [(ngModel)]="data.new_task.name" placeholder="Name" name="name" required>
       </mat-form-field>
       <mat-form-field>
-         <mat-select [(value)]="data.new_task.status" [(ngModel)]="data.new_task.status" name="status">
+         <mat-select [(value)]="data.new_task.status[0]" [(ngModel)]="data.new_task.status[0]" name="status">
             <mat-option value="pending">pending</mat-option>
             <mat-option value="ongoing">ongoing</mat-option>
             <mat-option value="completed">completed</mat-option>

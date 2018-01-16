@@ -1,7 +1,7 @@
 import { TodosService } from './todos.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
-import { Todo, StatusEnum } from './todo';
+import { Todo } from './todo';
 import { MasonryOptions } from 'angular2-masonry';
 import { HttpClient, HttpHeaders, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http';
 // tslint:disable-next-line:import-blacklist
@@ -15,10 +15,11 @@ import { AddTodoDialogComponent } from './add-todo-dialog/add-todo-dialog.compon
     providers: [TodosService]
 })
 export class TodosComponent implements OnInit {
+    tasks: Todo[];
+    tasksShown: Todo[];
     loading: boolean;
     statusFilter: string;
     statuses: string[];
-    tasks: Todo[];
     todosService: TodosService;
     progress_value = 0;
     myOptions: MasonryOptions = {
@@ -54,10 +55,19 @@ export class TodosComponent implements OnInit {
                     }
                 } else if (event instanceof HttpResponse) {
                     this.tasks = event.body;
+                    this.tasksShown = event.body;
                     this.loading = false;
                 }
             });
         this.progress_value = 0;
+    }
+
+    updateTasksShown() {
+        if (this.statusFilter === 'all') {
+            Object.assign(this.tasksShown, this.tasks);
+        } else {
+            this.tasksShown = this.tasks.filter(task => (task.status[0].toString() === this.statusFilter));
+        }
     }
 
     // Creates a task if no parameter, updates othewise
@@ -79,7 +89,7 @@ export class TodosComponent implements OnInit {
                 data: {
                     card_title: 'Create Task',
                     inital_task: {
-                        status: 'pending'
+                        status: ['pending']
                     }
                 }
             };
@@ -102,7 +112,6 @@ export class TodosComponent implements OnInit {
                     const inital_task = Object.assign({}, result.new_task);
                     // Temporary changes before we get the actual task from the db
                     result.new_task._id = 'on sait pas encore';
-                    result.new_task.status = 'pending';
                     this.tasks.push(result.new_task);
                     this.todosService.createTask(inital_task).subscribe(
                         dbTask => {
@@ -114,6 +123,7 @@ export class TodosComponent implements OnInit {
                         duration: 2000
                     });
                 }
+                this.updateTasksShown();
             }
         });
     }
@@ -121,14 +131,11 @@ export class TodosComponent implements OnInit {
     delete(id) {
         this.todosService.deleteTask(id).subscribe(result => {
             this.tasks = this.tasks.filter(task => (task._id !== id));
+            this.tasksShown = this.tasksShown.filter(task => (task._id !== id));
             this.snackBar.open('Task deleted', null, {
                 duration: 2000
             });
         });
-    }
-
-    update(task) {
-        alert('Not implemented yet\n' + JSON.stringify(task));
     }
 
 }
