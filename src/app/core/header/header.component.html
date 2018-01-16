@@ -17,8 +17,19 @@
    <span class="spacer"></span>
 
    <!-- Invert Button -->
-   <button id="invert" mat-icon-button color="accent" matTooltip="invert color" [matTooltipPosition]="'before'">
-      <mat-icon (click)="darkTheme()">invert_colors</mat-icon>
+   <button id="invert" mat-icon-button color="accent" matTooltip="invert color" [matTooltipPosition]="'before'" [matMenuTriggerFor]="menu">
+      <mat-icon>invert_colors</mat-icon>
    </button>
+   <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="switchTheme('blue')">
+         <div class="circle blue"></div>
+      </button>
+      <button mat-menu-item (click)="switchTheme('orange')">
+         <div class="circle orange"></div>
+      </button>
+      <button mat-menu-item (click)="switchTheme('yellow')">
+         <div class="circle yellow"></div>
+      </button>
+   </mat-menu>
 
 </mat-toolbar>

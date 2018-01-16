@@ -1,6 +1,6 @@
 #header {
-    position: fixed;
-    z-index: 3;
+   position: fixed;
+   z-index: 3;
 }
 
 @media(min-width:700px) {
@@ -10,37 +10,38 @@
 }
 
 button.main {
-    font-size: 1.2em;
+   font-size: 1.2em;
 }
 
 button.secondary {
-    font-size: .9em;
+   font-size: .9em;
 }
 
 .button-bump {
-    transition: box-shadow 0.2s ease-in-out;
+   transition: box-shadow 0.2s ease-in-out;
 }
 
 
 /* Transition to a bigger shadow on active */
+
+
 /* same as mat-elevation-12 */
+
 .button-bump:active {
-    box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2),
-    0px 12px 17px 2px rgba(0, 0, 0, 0.14),
-    0px 5px 22px 4px rgba(0, 0, 0, 0.12) !important;
+   box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12) !important;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+   color: inherit;
+   text-decoration: none;
 }
 
 .icon {
-    padding: 0 14px;
+   padding: 0 14px;
 }
 
 .spacer {
-    flex: 1 1 auto;
+   flex: 1 1 auto;
 }
 
 @media(max-width: 850px) {
@@ -50,7 +51,30 @@ a {
 }
 
 @media(min-width: 850px) {
-    #burger-btn {
-       display: none;
-    }
- }
+   #burger-btn {
+      display: none;
+   }
+}
+
+.mat-menu-panel {
+    min-width: 0 !important;
+}
+
+.circle {
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   padding: 1em;
+}
+
+.blue {
+   background: #3F51B5;
+}
+
+.orange {
+   background: #FF9800;
+}
+
+.yellow {
+   background: #FFEB3B;
+}
