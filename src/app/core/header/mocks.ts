@@ -51,3 +51,15 @@ export const ELEMENTS: Element[] = [
       icon: 'favorite'
    }
 ];
+
+export const THEMES: any[] = [
+    {
+        'color': 'blue',
+    },
+    {
+        'color': 'orange'
+    },
+    {
+        'color': 'yellow'
+    }
+ ];

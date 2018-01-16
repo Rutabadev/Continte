@@ -7,4 +7,8 @@ export class SharingService {
   constructor() {
     this.opened = false;
   }
+
+  public localStorageItem(item: string): string {
+    return localStorage.getItem(item);
+  }
 }

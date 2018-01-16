@@ -21,14 +21,9 @@
       <mat-icon>invert_colors</mat-icon>
    </button>
    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="switchTheme('blue')">
-         <div class="circle blue"></div>
-      </button>
-      <button mat-menu-item (click)="switchTheme('orange')">
-         <div class="circle orange"></div>
-      </button>
-      <button mat-menu-item (click)="switchTheme('yellow')">
-         <div class="circle yellow"></div>
+      <button mat-menu-item *ngFor="let theme of themes" (click)="switchTheme(theme.color)">
+          <div class="circle {{theme.color}}"></div>
+          <mat-icon class="icon" *ngIf="sharingService.localStorageItem('color') == theme.color">done</mat-icon>
       </button>
    </mat-menu>
 

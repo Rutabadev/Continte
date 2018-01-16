@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer2, Renderer } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Element } from './element';
-import { ELEMENTS } from './mocks';
+import { ELEMENTS, THEMES } from './mocks';
 import { SharingService } from '../../sharing.service';
 import { Router } from '@angular/router';
 
@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
     overlayContainer: OverlayContainer;
     eventCalls: any;
     elements: Element[];
+    themes: any[];
 
     constructor(overlayContainer: OverlayContainer,
         private renderer: Renderer,
@@ -38,17 +39,7 @@ export class HeaderComponent implements OnInit {
             this.switchTheme(color);
         }
         this.elements = ELEMENTS;
-    }
-
-    darkTheme() {
-        // Also check if the value is null in case of first time seiing
-        // if (localStorage.getItem('darkTheme') === 'false' || localStorage.getItem('darkTheme') === null) {
-        //     this.setDarkTheme();
-        //     localStorage.setItem('darkTheme', 'true');
-        // } else {
-        //     this.setLightTheme();
-        //     localStorage.setItem('darkTheme', 'false');
-        // }
+        this.themes = THEMES;
     }
 
     switchTheme(color) {

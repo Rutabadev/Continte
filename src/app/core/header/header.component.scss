@@ -57,10 +57,11 @@ a {
 }
 
 .mat-menu-panel {
-    min-width: 0 !important;
+   min-width: 0 !important;
 }
 
 .circle {
+   display: inline-block;
    width: 36px;
    height: 36px;
    border-radius: 50%;
@@ -77,4 +78,8 @@ a {
 
 .yellow {
    background: #FFEB3B;
+}
+
+.icon {
+    height: 48px;
 }
