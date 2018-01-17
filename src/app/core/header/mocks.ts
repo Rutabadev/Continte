@@ -55,11 +55,14 @@ export const ELEMENTS: Element[] = [
 export const THEMES: any[] = [
     {
         'color': 'blue',
+        'icon': 'done'
     },
     {
-        'color': 'orange'
+        'color': 'orange',
+        'icon': 'done'
     },
     {
-        'color': 'yellow'
+        'color': 'yellow',
+        'icon': 'pets'
     }
  ];
