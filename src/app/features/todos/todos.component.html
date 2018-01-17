@@ -24,7 +24,7 @@
                <p>{{task.creation_date | dateTime}}</p>
             </mat-card-content>
             <mat-card-actions>
-               <button mat-button color="primary" (click)="delete(task._id)">DELETE</button>
+               <button mat-button color="warn" (click)="delete(task._id)">DELETE</button>
                <button mat-button color="primary" (click)="openDialog(task)">UPDATE</button>
             </mat-card-actions>
          </mat-card>

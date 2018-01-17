@@ -13,7 +13,7 @@ export class AddTodoDialogComponent implements OnInit {
        @Inject(MAT_DIALOG_DATA) public data: any) { }
 
    ngOnInit() {
-       this.data.new_task = Object.assign({}, this.data.inital_task);
+       this.data.new_task = Object.assign({}, this.data.initial_task);
    }
 
    onSubmit() {

@@ -35,7 +35,7 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 
 // Define an alternate dark theme.
 $dark-primary: mat-palette($mat-orange);
-$dark-accent:  mat-palette($mat-grey, 100, 50, 200);
+$dark-accent:  mat-palette($mat-grey, 900, 900, 900);
 $dark-warn:    mat-palette($mat-deep-orange);
 $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
