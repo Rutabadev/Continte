@@ -79,7 +79,7 @@ export class TodosComponent implements OnInit {
                 width: '250px',
                 data: {
                     card_title: 'Update Task',
-                    inital_task: task,
+                    initial_task: task,
                     isUpdate: true
                 }
             };
@@ -88,7 +88,7 @@ export class TodosComponent implements OnInit {
                 width: '250px',
                 data: {
                     card_title: 'Create Task',
-                    inital_task: {
+                    initial_task: {
                         status: ['pending']
                     }
                 }
@@ -104,16 +104,16 @@ export class TodosComponent implements OnInit {
                 // Check if we need to create or update a task
                 if (result.isUpdate) {
                     this.todosService.updateTask(result.new_task);
-                    Object.assign(result.inital_task, result.new_task);
+                    Object.assign(result.initial_task, result.new_task);
                     this.snackBar.open('Task updated', null, {
                         duration: 2000
                     });
                 } else {
-                    const inital_task = Object.assign({}, result.new_task);
+                    const initial_task = Object.assign({}, result.new_task);
                     // Temporary changes before we get the actual task from the db
                     result.new_task._id = 'on sait pas encore';
                     this.tasks.push(result.new_task);
-                    this.todosService.createTask(inital_task).subscribe(
+                    this.todosService.createTask(initial_task).subscribe(
                         dbTask => {
                             Object.assign(result.new_task, dbTask);
                         }, error => {
