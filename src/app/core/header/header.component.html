@@ -23,7 +23,7 @@
    <mat-menu #menu="matMenu">
       <button mat-menu-item *ngFor="let theme of themes" (click)="switchTheme(theme.color)">
           <div class="circle {{theme.color}}"></div>
-          <mat-icon class="icon" *ngIf="(sharingService.localStorageItem('color') == null && theme.color == 'blue') || sharingService.localStorageItem('color') == theme.color">{{theme.icon}}</mat-icon>
+          <mat-icon *ngIf="(sharingService.localStorageItem('color') == null && theme.color == 'blue') || sharingService.localStorageItem('color') == theme.color">{{theme.icon}}</mat-icon>
       </button>
    </mat-menu>
 
