@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.sharingService = sharingService;
     this.router = _router;
     this.router.events.subscribe(() => {
-      this.spacing = this.router.url === '/welcome';
+      this.spacing = this.router.url === '/welcome' || this.router.url === '/snow';
     });
   }
 
