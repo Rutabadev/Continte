@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
-
+import * as _ from 'lodash';
 
 @Component({
    selector: 'app-add-todo-dialog',
@@ -13,7 +13,7 @@ export class AddTodoDialogComponent implements OnInit {
        @Inject(MAT_DIALOG_DATA) public data: any) { }
 
    ngOnInit() {
-       this.data.new_task = Object.assign({}, this.data.initial_task);
+       this.data.new_task = _.cloneDeep(this.data.initial_task);
    }
 
    onSubmit() {
