@@ -22,7 +22,7 @@
    <div *ngIf="!spacing" class="spacer"></div>
 
    <!-- Applying the mat-typography class adds styles for native elements. -->
-   <section id="content" class="mat-typography">
+   <section id="content" class="mat-typography" (swipe)='switchCompo($event)' >
       <router-outlet></router-outlet>
    </section>
 

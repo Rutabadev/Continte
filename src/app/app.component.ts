@@ -29,4 +29,12 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.elements = ELEMENTS;
   }
+
+  switchCompo(event) {
+    if (event.direction === 4) {
+      console.log('right');
+    } else if (event.direction === 2) {
+      console.log('left');
+    }
+  }
 }
