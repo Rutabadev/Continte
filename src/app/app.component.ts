@@ -22,25 +22,21 @@ export class AppComponent implements OnInit {
     private _router: Router) {
     this.sharingService = sharingService;
     this.router = _router;
-    this.router.events.subscribe(() => {
-      this.spacing = this.router.url === '/welcome' || this.router.url === '/snow';
-      this.currentComponent = this.elements.filter(comp => comp.routerLink === this.router.url)[0];
-      console.log(this.router.url);
-      console.log(this.currentComponent);
-    });
   }
 
   ngOnInit() {
     this.elements = ELEMENTS;
+    this.router.events.subscribe(() => {
+      this.spacing = this.router.url === '/welcome' || this.router.url === '/snow';
+      this.currentComponent = this.elements.filter(comp => comp.routerLink === this.router.url)[0];
+    });
   }
 
   switchCompo(event) {
     if (event.direction === 4) {
-      console.log('go left');
       const previousComponent = this.elements.filter(comp => comp.id === this.currentComponent.id - 1)[0];
       this.router.navigateByUrl(previousComponent.routerLink);
     } else if (event.direction === 2) {
-      console.log('go right');
       const nextComponent = this.elements.filter(comp => comp.id === this.currentComponent.id + 1)[0];
       this.router.navigateByUrl(nextComponent.routerLink);
     }
