@@ -34,11 +34,15 @@ export class AppComponent implements OnInit {
 
   switchCompo(event) {
     if (event.direction === 4) {
-      const previousComponent = this.elements.filter(comp => comp.id === this.currentComponent.id - 1)[0];
-      this.router.navigateByUrl(previousComponent.routerLink);
+      if (this.currentComponent.id !== 0) {
+        const previousComponent = this.elements.filter(comp => comp.id === this.currentComponent.id - 1)[0];
+        this.router.navigateByUrl(previousComponent.routerLink);
+      }
     } else if (event.direction === 2) {
-      const nextComponent = this.elements.filter(comp => comp.id === this.currentComponent.id + 1)[0];
-      this.router.navigateByUrl(nextComponent.routerLink);
+      if (this.currentComponent.id !== 6) {
+        const nextComponent = this.elements.filter(comp => comp.id === this.currentComponent.id + 1)[0];
+        this.router.navigateByUrl(nextComponent.routerLink);
+      }
     }
   }
 }
