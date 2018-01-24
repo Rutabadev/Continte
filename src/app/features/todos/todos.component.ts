@@ -44,6 +44,7 @@ export class TodosComponent implements OnInit {
         const subscription = timer.takeWhile(ev => ev < 37).subscribe(() => this.progress_value++);
         this.http.request(this.todosService.getAllTasksRequest())
             .map(response => <any>response)
+            .delay(3000)
             .subscribe(event => {
                 // Via this API, you get access to the raw event stream.
                 // Look for download progress events.
@@ -56,6 +57,7 @@ export class TodosComponent implements OnInit {
                 } else if (event instanceof HttpResponse) {
                     this.tasks = event.body;
                     this.tasksShown = event.body;
+                    this.updateTasksShown();
                     this.loading = false;
                 }
             });
