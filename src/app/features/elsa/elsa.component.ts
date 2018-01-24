@@ -26,7 +26,7 @@ export class ElsaComponent implements OnInit {
 
   onPan(event: any): void {
     event.preventDefault();
-    this.x = this.startX + event.deltaX;
+    this.x = this.startX + event.deltaX * 2;
     this.y = this.startY + event.deltaY;
   }
 
