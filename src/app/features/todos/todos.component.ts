@@ -42,9 +42,7 @@ export class TodosComponent implements OnInit {
         this.loading = true;
         const timer = Observable.timer(0, 200);
         const subscription = timer.takeWhile(ev => ev < 37).subscribe(() => this.progress_value++);
-        this.http.request(this.todosService.getAllTasksRequest())
-            .map(response => <any>response)
-            .delay(3000)
+       this.todosService.getAllTasks()
             .subscribe(event => {
                 // Via this API, you get access to the raw event stream.
                 // Look for download progress events.

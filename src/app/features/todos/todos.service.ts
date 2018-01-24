@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Rx';
 import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
@@ -8,12 +9,14 @@ export class TodosService {
    constructor(private http: HttpClient) { }
 
    getAllTasks() {
-      return this.http.get(environment.apiUrl + 'tasks/')
-         .map(response => <any[]>response);
+      const req = new HttpRequest('GET', environment.apiUrl + 'tasks/', { reportProgress: true });
+      return this.http.request(req)
+            .map(response => <any>response);
    }
 
-   getAllTasksRequest() {
-      return new HttpRequest('GET', environment.apiUrl + 'tasks/', { reportProgress: true });
+   getAllTasksObservable(): Observable<any[]> {
+      return this.http.get(environment.apiUrl + 'tasks/')
+         .map(response => <any[]>response);
    }
 
    getTask(id) {
