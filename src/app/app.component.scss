@@ -3,6 +3,12 @@
    font-size: 1.4em;
 }
 
+.box {
+   display: flex;
+   flex-flow: column;
+   height: 100%;
+}
+
 .spacer {
    padding-bottom: 3em;
 }
@@ -22,8 +28,8 @@ mat-sidenav {
 }
 
 #content {
+   flex: 1 1 auto;
    padding-top: 64px;
-   height: 100%;
 }
 
 @media(max-width: 600px) {

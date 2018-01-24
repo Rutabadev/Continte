@@ -9,23 +9,28 @@
 
 <mat-sidenav-container>
 
-   <app-header></app-header>
+   <div class="box">
 
-   <mat-sidenav class="mat-elevation-z5" [(opened)]="sharingService.opened" (close)="sharingService.opened = false">
-      <ul>
-         <li *ngFor="let element of elements" [routerLink]="element.routerLink">
-             <button class="side-btn" (click)="sharingService.opened = false" mat-button><mat-icon class="icon" color="primary">{{element.icon}}</mat-icon> {{element.name}}</button>
-         </li>
-      </ul>
-   </mat-sidenav>
+      <app-header></app-header>
 
-   <div *ngIf="!spacing" class="spacer"></div>
+      <mat-sidenav class="mat-elevation-z5" [(opened)]="sharingService.opened" (close)="sharingService.opened = false">
+         <ul>
+            <li *ngFor="let element of elements" [routerLink]="element.routerLink">
+               <button class="side-btn" (click)="sharingService.opened = false" mat-button>
+                  <mat-icon class="icon" color="primary">{{element.icon}}</mat-icon> {{element.name}}</button>
+            </li>
+         </ul>
+      </mat-sidenav>
 
-   <!-- Applying the mat-typography class adds styles for native elements. -->
-   <section id="content" class="mat-typography" (swipe)='switchCompo($event)' >
-      <router-outlet></router-outlet>
-   </section>
+      <div *ngIf="!spacing" class="spacer"></div>
 
-   <app-footer></app-footer>
+      <!-- Applying the mat-typography class adds styles for native elements. -->
+      <section id="content" class="mat-typography" (swipe)='switchCompo($event)'>
+         <router-outlet></router-outlet>
+      </section>
+
+      <app-footer></app-footer>
+
+   </div>
 
 </mat-sidenav-container>
