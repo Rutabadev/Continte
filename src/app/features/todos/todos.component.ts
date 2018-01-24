@@ -17,6 +17,8 @@ import { AddTodoDialogComponent } from './add-todo-dialog/add-todo-dialog.compon
 export class TodosComponent implements OnInit {
     tasks: Todo[];
     tasksShown: Todo[];
+    asyncTasks: Observable<any>;
+    asyncTasksShown: Observable<any>;
     loading: boolean;
     statusFilter: string;
     statuses: string[];
@@ -42,23 +44,26 @@ export class TodosComponent implements OnInit {
         this.loading = true;
         const timer = Observable.timer(0, 200);
         const timerSubscription = timer.takeWhile(ev => ev < 37).subscribe(() => this.progress_value++);
-        this.todosService.getAllTasks()
-            .subscribe(event => {
-                // Via this API, you get access to the raw event stream.
-                // Look for download progress events.
-                if (event.type === HttpEventType.DownloadProgress) {
-                    if (event.loaded > this.progress_value) {
-                        // This is an download progress event. Compute and show the % done:
-                        this.progress_value = Math.round(100 * event.loaded / event.total);
-                        timerSubscription.unsubscribe();
-                    }
-                } else if (event instanceof HttpResponse) {
-                    this.tasks = event.body;
-                    this.tasksShown = event.body;
-                    this.updateTasksShown();
-                    this.loading = false;
-                }
-            });
+        // this.todosService.getAllTasks()
+        //     .subscribe(event => {
+        //         // Via this API, you get access to the raw event stream.
+        //         // Look for download progress events.
+        //         if (event.type === HttpEventType.DownloadProgress) {
+        //             if (event.loaded > this.progress_value) {
+        //                 // This is an download progress event. Compute and show the % done:
+        //                 this.progress_value = Math.round(100 * event.loaded / event.total);
+        //                 timerSubscription.unsubscribe();
+        //             }
+        //         } else if (event instanceof HttpResponse) {
+        //             this.tasks = event.body;
+        //             this.tasksShown = event.body;
+        //             this.updateTasksShown();
+        //             this.loading = false;
+        //         }
+        //     });
+        this.asyncTasks = this.asyncTasksShown = this.todosService.getAllTasksAlAncienne();
+        this.loading = false;
+
         this.progress_value = 0;
     }
 
@@ -67,6 +72,14 @@ export class TodosComponent implements OnInit {
             Object.assign(this.tasksShown, this.tasks);
         } else {
             this.tasksShown = this.tasks.filter(task => (task.status[0].toString() === this.statusFilter));
+        }
+    }
+
+    updateAsyncTasksShown() {
+        if (this.statusFilter === 'all') {
+            Object.assign(this.asyncTasksShown, this.asyncTasks);
+        } else {
+            this.asyncTasksShown = this.asyncTasks.filter(task => (task.status[0].toString() === this.statusFilter));
         }
     }
 
