@@ -41,16 +41,16 @@ export class TodosComponent implements OnInit {
         this.statuses = ['all', 'pending', 'ongoing', 'completed'];
         this.loading = true;
         const timer = Observable.timer(0, 200);
-        const subscription = timer.takeWhile(ev => ev < 37).subscribe(() => this.progress_value++);
-       this.todosService.getAllTasks()
+        const timerSubscription = timer.takeWhile(ev => ev < 37).subscribe(() => this.progress_value++);
+        this.todosService.getAllTasks()
             .subscribe(event => {
                 // Via this API, you get access to the raw event stream.
                 // Look for download progress events.
                 if (event.type === HttpEventType.DownloadProgress) {
-                    if (event.loaded > 20) {
+                    if (event.loaded > this.progress_value) {
                         // This is an download progress event. Compute and show the % done:
                         this.progress_value = Math.round(100 * event.loaded / event.total);
-                        subscription.unsubscribe();
+                        timerSubscription.unsubscribe();
                     }
                 } else if (event instanceof HttpResponse) {
                     this.tasks = event.body;
