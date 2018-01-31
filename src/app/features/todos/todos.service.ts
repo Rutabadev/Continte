@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Rx';
 import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
@@ -13,8 +14,9 @@ export class TodosService {
             .map(response => <any>response);
    }
 
-   getAllTasksAlAncienne() {
-      return this.http.get(environment.apiUrl + 'tasks/');
+   getAllTasksObservable(): Observable<any[]> {
+      return this.http.get(environment.apiUrl + 'tasks/')
+         .map(response => <any[]>response);
    }
 
    getTask(id) {
