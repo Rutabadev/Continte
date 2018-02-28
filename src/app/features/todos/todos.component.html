@@ -14,7 +14,7 @@
 
   <masonry [options]="myOptions">
      <masonry-brick *ngFor="let task of tasksShown">
-        <mat-card>
+        <mat-card [ngClass]="task.status[0]">
            <mat-card-content>
               <mat-card-title>
                  <p>{{task.name}}</p>

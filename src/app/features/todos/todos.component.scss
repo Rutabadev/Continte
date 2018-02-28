@@ -47,3 +47,15 @@ mat-radio-button {
       right: 2rem;
    }
 }
+
+.pending {
+    background-color: rgba(255, 0, 0, 0.26);
+}
+
+.ongoing {
+    background-color: rgba(0, 0, 255, 0.26);
+}
+
+.completed {
+    background-color: rgba(0, 255, 0, 0.26);
+}
