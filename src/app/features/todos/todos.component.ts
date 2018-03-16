@@ -57,6 +57,7 @@ export class TodosComponent implements OnInit {
                     this.tasksShown = event.body;
                     this.updateTasksShown();
                     this.loading = false;
+                    this.tasksShown = this.tasksShown.reverse();
                 }
             });
         this.progress_value = 0;
