@@ -116,7 +116,7 @@ export class TodosComponent implements OnInit {
                     const initial_task = Object.assign({}, result.new_task);
                     // Temporary changes before we get the actual task from the db
                     result.new_task._id = 'on sait pas encore';
-                    this.tasks.push(result.new_task);
+                    this.tasks.unshift(result.new_task);
                     this.todosService.createTask(initial_task).subscribe(
                         dbTask => {
                             Object.assign(result.new_task, dbTask);
