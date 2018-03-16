@@ -1,8 +1,8 @@
 import { TodosService } from './todos.service';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { Todo } from './todo';
-import { MasonryOptions } from 'angular2-masonry';
+import { MasonryOptions, AngularMasonry } from 'angular2-masonry';
 import { HttpClient, HttpHeaders, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http';
 // tslint:disable-next-line:import-blacklist
 import { Observable } from 'rxjs/Rx';
@@ -14,7 +14,9 @@ import { AddTodoDialogComponent } from './add-todo-dialog/add-todo-dialog.compon
     styleUrls: ['./todos.component.scss'],
     providers: [TodosService]
 })
+
 export class TodosComponent implements OnInit {
+    @ViewChild(AngularMasonry) masonry: AngularMasonry;
     tasks: Todo[];
     tasksShown: Todo[];
     loading: boolean;
@@ -69,6 +71,7 @@ export class TodosComponent implements OnInit {
         } else {
             this.tasksShown = this.tasks.filter(task => (task.status[0].toString() === this.statusFilter));
         }
+        this.masonry.layout();
     }
 
     // Creates a task if no parameter, updates othewise
